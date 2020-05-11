@@ -10,7 +10,14 @@ const GameSchema = new Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: "Recipe"
     }],
-    
+    user_id: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "User"
+    },
+    date: {
+        type: Date,
+        default: Date.now
+    }
 
 });
 

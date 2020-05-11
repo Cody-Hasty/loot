@@ -10,6 +10,10 @@ const ItemSchema = new Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: "Recipe"
     }],
+    date: {
+        type: Date,
+        default: Date.now
+    }
 
 });
 

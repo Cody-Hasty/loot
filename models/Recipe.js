@@ -13,7 +13,11 @@ const RecipeSchema = new Schema({
     items:[{
         type: mongoose.Schema.Types.ObjectId,
         ref: "Item"
-    }]
+    }],
+    date: {
+        type: Date,
+        default: Date.now
+    }
 
 });
 

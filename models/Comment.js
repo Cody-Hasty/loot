@@ -6,14 +6,18 @@ const CommentSchema = new Schema({
         type: String,
         required: true
     },
-    user_id: [{
+    user_id: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "User"
-    }],
-    recipe_id: [{
+    },
+    recipe_id: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "Recipe"
-    }]
+    },
+    date: {
+        type: Date,
+        default: Date.now
+    }
 
 });
 
