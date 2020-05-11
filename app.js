@@ -4,6 +4,8 @@ const app = express();
 const db = require('./config/keys').mongoURI;
 // const bodyParser = require('body-parser');
 
+//users route
+const users = require("./routes/api/users");
 
 mongoose
     .connect(db, {
@@ -17,6 +19,9 @@ mongoose
 //     extended: false
 // }));
 // app.use(bodyParser.json());
+
+app.use("/api/users", users);
+
 
 app.get("/", (req, res) => res.send("LOOTTTTTT"));
 const port = process.env.PORT || 5500;
