@@ -10,6 +10,7 @@ class SessionForm extends React.Component {
             password2: ''
         }
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.resetForm = this.resetForm.bind(this);
     }
 
     update(field) {
@@ -38,17 +39,15 @@ class SessionForm extends React.Component {
         this.props.action(user);
     }
 
-    renderErrors() {
-        if (this.props.errors) {
-            return (
-                <ul>
-                    {this.props.errors.map((error, i) => (
-                        <li key={i}>{error}</li>
-                    ))}
-                </ul>
-            )
-        }
-    }
+    // renderErrors() {
+    //         return (
+    //             <ul>
+    //                 {this.props.errors.map((error, i) => (
+    //                     <li key={i}>{error}</li>
+    //                 ))}
+    //             </ul>
+    //         )
+    // }
 
     render() {
         let userName = (
@@ -72,10 +71,10 @@ class SessionForm extends React.Component {
         
         return (
             <div>
-                <h3>Sign up</h3>
-                {this.renderErrors()}
+                <h3>{this.props.formType}</h3>
+                {/* {this.renderErrors()} */}
                 <form onSubmit={this.handleSubmit}>
-                    {userName}
+                    {this.props.formType === 'signup' ? userName : null}
                     <label>Enter your email:
                         <input
                             type='text'
@@ -90,7 +89,7 @@ class SessionForm extends React.Component {
                             onChange={this.update('password')}
                         />
                     </label>
-                    {passVerify}
+                    {this.props.formType === 'signup' ? passVerify : null}
                     <button>Let's Go!</button>
                 </form>
             </div>

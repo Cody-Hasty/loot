@@ -1,5 +1,7 @@
 const AWS = require('aws-sdk');
+
 const env = require("./env.js");
+
 
 
 const s3Client = new AWS.S3({
@@ -14,8 +16,6 @@ const uploadParams = {
     Key: "",
     Body: null
 };
-
-
 
 const s3 = {};
 s3.s3Client = s3Client;
