@@ -4,10 +4,12 @@ const validateRegisterInput = require('../../validation/register');
 const validateLoginInput = require('../../validation/login');
 const bcrypt = require('bcryptjs');
 const User = require('../../models/User');
-const keys = require('../../config/keys');
+const keys = require('../../config/keys_dev');
 const passport = require('passport');
 const jwt = require('jsonwebtoken');
 
+
+//USER REGISTER ROUTE
 router.post('/register', (req, res) => {
     const { errors, isValid } = validateRegisterInput(req.body);
 
@@ -38,6 +40,8 @@ router.post('/register', (req, res) => {
         })
 })
 
+
+//USER LOGIN ROUTE
 router.post('/login', (req, res) => {
     const { errors, isValid } = validateLoginInput(req.body);
     console.log(errors);
@@ -77,9 +81,9 @@ router.post('/login', (req, res) => {
         })
 })
 
-router.get("/test", (req, res) => res.json({ msg: "This is the users route"}));
 
 
+//USER PRIVATE ROUTE
 router.get('/current', passport.authenticate('jwt', {
     session: false
 }), (req, res) => {
