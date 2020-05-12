@@ -33,7 +33,10 @@ router.post('/', passport.authenticate('jwt', { session: false }), (req, res) =>
 
 //GAME GET BY TITLE ROUTE
 router.get('/:title', (req, res) => {
-    Game.find({ title: req.params.title })
+    let oldTitle = req.params.title
+    let newTitle = oldTitle.replace(/-/g, " ");
+
+    Game.find({ title: newTitle })
     .then(game => res.json(game))
     .catch(err =>
         res.status(404).json({
