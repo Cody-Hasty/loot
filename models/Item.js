@@ -6,10 +6,12 @@ const ItemSchema = new Schema({
         type: String,
         required: true
     },
-    used_in: [{
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "Recipe"
+    pictures: [{
+        url: "",
     }],
+    description: {
+        type: String,
+    },
     date: {
         type: Date,
         default: Date.now

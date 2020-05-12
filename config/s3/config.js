@@ -1,5 +1,8 @@
 const AWS = require('aws-sdk');
-const env = require("./env.js.js");
+
+const env = require("./env.js");
+
+
 
 const s3Client = new AWS.S3({
     accessKeyId: env.AWS_ACCESS_KEY,
