@@ -10,7 +10,7 @@ const jwt = require('jsonwebtoken');
 
 router.post('/register', (req, res) => {
     const { errors, isValid } = validateRegisterInput(req.body);
-
+    console.log('im in route', req)
     if (!isValid) {
         return res.status(400).json(errors);
     }
@@ -30,10 +30,23 @@ router.post('/register', (req, res) => {
                         if (err) throw err;
                         newUser.password = hash;
                         newUser.save()
-                        .then(user => res.json(user))
-                        .catch(err => console.log(err));
+                            .then(user => res.json(user))
+                            .catch(err => console.log(err));
                     })
                 })
+                const payload = {
+                    id: newUser.id,
+                };
+                jwt.sign(
+                    payload,
+                    keys.secretOrKey, { expiresIn: 3600 },
+                    (err, token) => {
+                        res.json({
+                            success: true,
+                            token: 'Bearer ' + token
+                        });
+                    }
+                );
             }
         })
 })
@@ -62,8 +75,7 @@ router.post('/login', (req, res) => {
 
                         jwt.sign(
                             payload,
-                            keys.secretOrKey,
-                            {expiresIn: 3600},
+                            keys.secretOrKey, { expiresIn: 3600 },
                             (err, token) => {
                                 res.json({
                                     success: true,
@@ -71,13 +83,13 @@ router.post('/login', (req, res) => {
                                 });
                             });
                     } else {
-                        return res.status(400).json({ password: 'Incorrect password'});
+                        return res.status(400).json({ password: 'Incorrect password' });
                     }
                 })
         })
 })
 
-router.get("/test", (req, res) => res.json({ msg: "This is the users route"}));
+router.get("/test", (req, res) => res.json({ msg: "This is the users route" }));
 
 
 router.get('/current', passport.authenticate('jwt', {
