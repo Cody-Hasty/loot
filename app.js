@@ -3,6 +3,7 @@ const express = require("express");
 const app = express();
 const db = require('./config/keys').mongoURI;
 const bodyParser = require('body-parser');
+require("./routes/api/upload")(app);
 
 //users route
 const users = require("./routes/api/users");
