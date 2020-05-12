@@ -10,9 +10,10 @@ const CommentSchema = new Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: "User"
     },
-    recipe_id: {
+    commented_id: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: "Recipe"
+        ref: "",
+        id:
     },
     date: {
         type: Date,
