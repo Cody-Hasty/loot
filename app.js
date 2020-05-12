@@ -4,6 +4,7 @@ const app = express();
 const db = require('./config/keys_dev').mongoURI;
 const bodyParser = require('body-parser');
 const passport = require('passport');
+require("./routes/api/upload")(app);
 
 const users = require("./routes/api/users");
 const games = require("./routes/api/games")
