@@ -7,7 +7,7 @@ const passport = require('passport');
 require("./routes/api/upload")(app);
 
 const users = require("./routes/api/users");
-const games = require("./routes/api/games")
+const games = require("./routes/api/games");
 
 mongoose
     .connect(db, {

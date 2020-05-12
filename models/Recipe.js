@@ -6,10 +6,10 @@ const RecipeSchema = new Schema({
         type: String,
         required: true
     },
-    used_in: [{
+    item: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: "Recipe"
-    }],
+        ref: "Item"
+    },
     ingredients:[{
         amount: "",
         ingredient: {
