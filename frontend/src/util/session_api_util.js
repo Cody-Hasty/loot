@@ -6,7 +6,7 @@ export const signup = (user) => {
 }
 
 export const login = (user) => {
-    return axios.post('/api/session', user);
+    return axios.post('/api/users/login', user);
 }
 
 export const logout = () => {
