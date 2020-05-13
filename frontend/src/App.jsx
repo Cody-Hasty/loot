@@ -3,7 +3,7 @@ import { Route, Switch } from 'react-router-dom';
 
 import SignUpFormContainer from './components/session/signup_form_container';
 import LoginFormContainer from './components/session/login_form_container';
-import WelcomePage from './components/welcome/welcome_page';
+import WelcomePage from './components/welcome/welcome_page_container';
 
 function App() {
     return ( 

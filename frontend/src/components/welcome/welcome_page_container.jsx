@@ -3,7 +3,7 @@ import { logout } from '../../actions/session_actions';
 import WelcomePage from './welcome_page';
 
 const mSTP = state => ({
-    currentUser: state.entities.users[state.session.currentUser]
+    currentUser: state.session.user
 });
 
 const mDTP = dispatch => ({

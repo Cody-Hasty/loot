@@ -1,12 +1,22 @@
 import React from 'react';
 
 const WelcomePage = (props) => {
-    return (
-        <div>
-            <p>Welcome {this.props.currentUser.username}</p>
-            <button onClick={this.props.logout()}></button>
-        </div>
-    )
+
+    console.log(props)
+    if (props.currentUser.id){
+        return (
+            <div>
+                <p>Welcome {props.currentUser.id}</p>
+                <button onClick={props.logout()}></button>
+            </div>
+        )
+    }else{
+        return(
+            <div>
+                There is no current user
+            </div>
+        )
+    }
 }
 
 export default WelcomePage;
