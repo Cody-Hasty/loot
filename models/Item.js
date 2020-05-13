@@ -6,9 +6,9 @@ const ItemSchema = new Schema({
         type: String,
         required: true
     },
-    pictures: [{
+    pictures: {
         url: "",
-    }],
+    },
     description: {
         type: String,
     },
