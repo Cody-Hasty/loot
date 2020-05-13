@@ -31,7 +31,7 @@ class ItemForm extends React.Component{
                     <input type="text" placeholder="game_id" value={this.state.game_id} onChange={this.handleChange("game_id")}/>
                     <textarea type="text" placeholder="description" value={this.state.description} onChange={this.handleChange("description")}/>
                     <input type="file" name="Add File" value={this.state.pictures} onChange={this.handleChange("pictures")}/>
-                    <button type="submit">Submit</button>
+                    <button type="submit">Submit!</button>
                 </form>
             </div>
         )
