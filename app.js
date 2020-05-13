@@ -8,6 +8,7 @@ require("./routes/api/upload")(app);
 
 const users = require("./routes/api/users");
 const games = require("./routes/api/games");
+const items = require("./routes/api/items");
 
 if (process.env.NODE_ENV === 'production') {
     app.use(express.static('frontend/build'));
@@ -35,6 +36,7 @@ app.use(bodyParser.json());
 
 app.use("/api/users", users);
 app.use("/api/games", games);
+app.use("/api/items", items);
 
 
 app.get("/", (req, res) => res.send("LOOTTTTTT"));
