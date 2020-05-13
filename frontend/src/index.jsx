@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import Root from './root';
-import axios from 'axios';
+// import axios from 'axios';
 import configureStore from './store/store';
 import { setAuthToken } from './util/session_api_util';
 import jwt_decode from 'jwt-decode';
@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (localStorage.jwtToken) {
         setAuthToken(localStorage.jwtToken);
         const decoded = jwt_decode(localStorage.jwtToken);
-        console.log(decoded);
+        // console.log(decoded);
         const preloadedState = {
             session: {
                 isAuthenticated: true,
@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
         store = configureStore();
     }
 
-    ReactDOM.render(<Root store={store} />, root);
+    ReactDOM.render(<Root store={store}/>, root);
 })
 
-window.axios = axios;
+// window.axios = axios;
