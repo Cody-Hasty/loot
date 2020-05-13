@@ -15,8 +15,12 @@ const ItemSchema = new Schema({
     date: {
         type: Date,
         default: Date.now
+    },
+    game_id:{
+        type: String,
+        required: true
     }
-
+    
 });
 
 Item = mongoose.model("Item", ItemSchema);
