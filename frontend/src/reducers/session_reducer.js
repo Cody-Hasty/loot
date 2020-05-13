@@ -13,7 +13,7 @@ const sessionReducer = (oldState = initialState, action) => {
     Object.freeze(oldState);
     switch (action.type) {
         case RECEIVE_CURRENT_USER:
-            console.log(action.currentUser)
+            // console.log(action.currentUser)
             return {...oldState,
                 isAuthenticated: !!action.currentUser,
                 user: action.currentUser
