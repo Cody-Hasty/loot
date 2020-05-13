@@ -2,9 +2,11 @@ import { connect } from 'react-redux';
 import { logout } from '../../actions/session_actions';
 import NavBar from './navbar';
 
-const mSTP = state => ({
-    currentUser: state.entities.users[state.session.currentUser]
-});
+const mSTP = (state, ownProps) => {
+    // console.log('container', state);
+    return {
+    currentUser: state.session.user,
+}};
 
 const mDTP = dispatch => ({
     logout: () => dispatch(logout())

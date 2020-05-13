@@ -1,19 +1,27 @@
 import React from 'react';
 
-const WelcomePage = (props) => {
+class WelcomePage extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
 
-    console.log(props)
-    if (props.currentUser.id){
+        }
+    }
+
+    welcomeMessage() {
+        if (this.props.currentUser.username) {
+            return(
+                <div>
+                    Welcome {this.props.currentUser.username}
+                </div>
+            )
+        }
+    }
+
+    render() {
         return (
             <div>
-                <p>Welcome {props.currentUser.id}</p>
-                <button onClick={props.logout()}></button>
-            </div>
-        )
-    }else{
-        return(
-            <div>
-                There is no current user
+                {this.welcomeMessage()}
             </div>
         )
     }
