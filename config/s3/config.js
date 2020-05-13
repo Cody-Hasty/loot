@@ -1,9 +1,10 @@
 const AWS = require('aws-sdk');
+let env = "";
 
 if (process.env.NODE_ENV === 'production') {
-    const env = require("./env_prod.js")
+    env = require("./env_prod.js")
 } else {
-    const env = require("./env.js");
+    env = require("./env.js");
 }
 
 
