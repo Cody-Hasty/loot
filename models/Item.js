@@ -16,7 +16,7 @@ const ItemSchema = new Schema({
         type: Date,
         default: Date.now
     },
-    game_id:{
+    game_id:{   //this needs to be changed to a ref?-dan 5/14
         type: String,
         required: true
     }

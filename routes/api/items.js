@@ -10,6 +10,9 @@ const validateItemInput = require('../../validation/item_submit');
 const upload = require("../../config/multer/config");
 
 
+
+
+
 // { game_id: req.params.game_id }
 
 router.get("/test", (req, res) => res.json({ msg: "This is the items route" }));

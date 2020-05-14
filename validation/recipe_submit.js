@@ -16,9 +16,9 @@ module.exports = function validateRecipeInput(data) {
         errors.label = "Item cannot be blank";
     }
 
-    if (Validator.isEmpty(data.ingredients)) {
-        errors.ingredients = "A recipe must have ingredients";
-    }
+    // if (Validator.isEmpty(data.ingredients)) {
+    //     errors.ingredients = "A recipe must have ingredients";
+    // }
 
 
     return {
