@@ -16,7 +16,7 @@ class WelcomePage extends React.Component {
                         <h1 className="website-title glow">LOOT</h1>
                     </div>
                     Welcome {this.props.currentUser.username}
-                    <!-- <button onClick={props.logout()}></button> -->
+                    {/* <button onClick={props.logout()}></button> */}
                 </div>
             )
         } else{
@@ -29,12 +29,13 @@ class WelcomePage extends React.Component {
               </div>
             )
         }
+    }
 
     render() {
         return (
             <div>
                 {this.welcomeMessage()}
-                <!-- hello world -->
+                {/* hello world */}
             </div>
         )
     }
