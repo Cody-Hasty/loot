@@ -6,6 +6,8 @@ const passport = require("passport");
 const jwt = require("jsonwebtoken");
 const Item = require('../../models/Item');
 const validateItemInput = require('../../validation/item_submit');
+// const awsController = require("../../controller/aws.controller");
+const upload = require("../../config/multer/config");
 
 
 // { game_id: req.params.game_id }
@@ -30,6 +32,7 @@ router.get('/:id', (req, res) => {
 });
 
 router.post('/',
+    upload.single("picture"),
     // passport.authenticate('jwt', { session: false }),
     (req, res) => {
         const { errors, isValid } = validateItemInput(req.body);
@@ -42,7 +45,7 @@ router.post('/',
             name: req.body.name,
             game_id: req.body.game_id,
             description: req.body.description,
-            pictures: req.body.pictures
+            picture: req.file.location
         });
 
         newItem.save().then(item => res.json(item));
