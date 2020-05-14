@@ -36,7 +36,8 @@ class SessionForm extends React.Component {
             password: this.state.password,
             password2: this.state.password2
         }
-        this.props.action(user);
+        this.props.action(user)
+            .then(() => this.props.history.push('/#/'))
     }
 
     // renderErrors() {
@@ -69,6 +70,7 @@ class SessionForm extends React.Component {
             </label>
         )
         
+        console.log(this);
         return (
             <div>
                 <h3>{this.props.formType}</h3>
