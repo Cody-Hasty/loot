@@ -6,8 +6,8 @@ const ItemSchema = new Schema({
         type: String,
         required: true
     },
-    pictures: {
-        url: "",
+    picture: {
+        type: Object,
     },
     description: {
         type: String,
