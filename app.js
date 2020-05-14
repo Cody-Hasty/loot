@@ -4,11 +4,13 @@ const app = express();
 const db = require('./config/keys').mongoURI;
 const bodyParser = require('body-parser');
 const passport = require('passport');
+
 require("./routes/api/upload")(app);
 
 const users = require("./routes/api/users");
 const games = require("./routes/api/games");
 const items = require("./routes/api/items");
+const recipes = require("./routes/api/recipes");
 
 if (process.env.NODE_ENV === 'production') {
     app.use(express.static('frontend/build'));
@@ -37,6 +39,7 @@ app.use(bodyParser.json());
 app.use("/api/users", users);
 app.use("/api/games", games);
 app.use("/api/items", items);
+app.use("/api/recipes", recipes)
 
 
 app.get("/", (req, res) => res.send("LOOTTTTTT"));

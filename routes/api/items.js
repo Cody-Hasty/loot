@@ -8,6 +8,9 @@ const Item = require('../../models/Item');
 const validateItemInput = require('../../validation/item_submit');
 
 
+
+
+
 // { game_id: req.params.game_id }
 
 router.get("/test", (req, res) => res.json({ msg: "This is the items route" }));
