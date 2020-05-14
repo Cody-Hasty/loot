@@ -22,6 +22,7 @@ class WelcomePage extends React.Component {
         return (
             <div>
                 {this.welcomeMessage()}
+                hello world
             </div>
         )
     }
