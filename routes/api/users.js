@@ -96,9 +96,6 @@ router.post('/login', (req, res) => {
         })
 })
 
-router.get("/test", (req, res) => res.json({ msg: "This is the users route" }));
-
-
 
 //USER PRIVATE ROUTE
 router.get('/current', passport.authenticate('jwt', {

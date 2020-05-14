@@ -6,17 +6,21 @@ const ItemSchema = new Schema({
         type: String,
         required: true
     },
-    pictures: [{
-        url: "",
-    }],
+    picture: {
+        type: Object,
+    },
     description: {
         type: String,
     },
     date: {
         type: Date,
         default: Date.now
+    },
+    game_id:{
+        type: String,
+        required: true
     }
-
+    
 });
 
 Item = mongoose.model("Item", ItemSchema);

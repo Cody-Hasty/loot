@@ -9,9 +9,6 @@ export const login = (user) => {
     return axios.post('/api/users/login', user);
 }
 
-export const logout = () => {
-    return axios.delete('/api/session');
-}
 
 export const setAuthToken = token => {
     if (token) {

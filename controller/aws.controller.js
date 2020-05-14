@@ -17,7 +17,7 @@ exports.doUpload = (req, res) =>{
             Key: req.file.originalname
         })
         
-        res.json({ message: "File uploaded successfully -> keyname:" + req.file.originalname});
+        res.json({ message: "File uploaded successfully -> keyname:" + req.file.originalname, url: url });
         
     });
     

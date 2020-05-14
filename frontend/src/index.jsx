@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+// import './index.css';
 import Root from './root';
 // import axios from 'axios';
 import configureStore from './store/store';
 import { setAuthToken } from './util/session_api_util';
 import jwt_decode from 'jwt-decode';
-import { logout } from './util/session_api_util';
+import { logout } from './actions/session_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
     const root = document.getElementById('root');
