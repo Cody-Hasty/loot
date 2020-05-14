@@ -7,7 +7,8 @@ import LoginFormContainer from './components/session/login_form_container';
 
 import WelcomePageContainer from './components/welcome/welcome_page_container';
 import NavBarContainer from './components/nav/navbar_container';
-// import ItemFormComponent from "./components/item/item_form_container"
+import ItemFormComponent from "./components/item/item_form_container";
+
 
 const customHistory = createBrowserHistory();
 function App() {
@@ -20,9 +21,9 @@ function App() {
                     <Switch>
                         <ProtectedRoute exact path="/register" component={SignUpFormContainer} loggedIn/>
                         <ProtectedRoute exact path="/login" component={LoginFormContainer} loggedIn/>
-                        {/* <Route exact path="/navbar" component={NavBarContainer} /> */}
-                        <Route path="/" component={WelcomePageContainer} />
-                        {/* <Route exact path="/item" component={ItemFormComponent} /> */}
+                        <Route exact path="/navbar" component={NavBarContainer} />
+                        <Route exact path="/item" component={ItemFormComponent} />
+                        <Route exact path="/" component={WelcomePageContainer} />
                     </Switch>
             </div>
         </Router>
