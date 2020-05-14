@@ -1,4 +1,5 @@
 import * as APIutil from '../util/recipe_api_util';
+
 export const REMOVE_RECIPE_ERRORS = "REMOVE_RECIPE_ERRORS"
 export const RECEIVE_RECIPE = "RECEIVE_RECIPE";
 export const RECEIVE_RECIPES = "RECEIVE_RECIPES";
@@ -24,21 +25,21 @@ export const removeErrors = () => ({
 });
 
 export const createRecipe = (recipe) => dispatch => (
-    APIUtil.createRecipe(recipe)
+    APIutil.createRecipe(recipe)
     .then((recipe) => dispatch(receiveRecipe(recipe)))
     .catch(err => dispatch(receiveErrors(err.response.data)))
 );
 
 
 export const getRecipe = (recipeId) => dispatch => (
-    APIUtil.getRecipe(recipeId)
+    APIutil.getRecipe(recipeId)
     .then((recipe) => dispatch(receiveRecipe(recipe)))
     .catch(err => dispatch(receiveErrors(err.response.data)))
 );
 
 
 export const getRecipes = () => dispatch => (
-    APIUtil.getRecipes()
+    APIutil.getRecipes()
     .then((recipes) => dispatch(receiveRecipes(recipes)))
     .catch(err => dispatch(receiveErrors(err.response.data)))
 );
