@@ -15,7 +15,7 @@ class Games extends React.Component {
       <div className="game-list">
         <ul>
           {games.map((game) => (
-            <li key={game._id}>
+            <li key={game._id} className="game-box">
               <Game game={game} />
             </li>
           ))}
