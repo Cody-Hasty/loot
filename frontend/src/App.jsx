@@ -14,6 +14,7 @@ import GameFormContainer from "./components/game/game_form_container"
 
 import ItemsContainer from "./components/item/items_container";
 import GamesContainer from "./components/game/games_container";
+import RecipesIndexContainer from './components/recipe/recipes_index_container';
 
 
 
@@ -38,6 +39,7 @@ function App() {
               component={LoginFormContainer}
               loggedIn
             />
+            <Route exact path="/recipes" component={RecipesIndexContainer} />
             <Route exact path="/navbar" component={NavBarContainer} />
 
             <Route exact path="/items/new" component={ItemFormComponent} />
