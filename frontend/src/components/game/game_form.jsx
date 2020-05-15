@@ -1,5 +1,5 @@
 import React from "react";
 
-export default class ItemForm extends React.Component {
+export default class GameForm extends React.Component {
 
 }

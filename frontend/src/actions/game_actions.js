@@ -1,6 +1,5 @@
 import * as APIUtil from "../util/game_api_util";
-import jwt_decode from 'jwt-decode';
-export const REMOVE_GAME_ERRORS = "REMOVE_GAME_ERRORS"
+export const REMOVE_GAME_ERRORS = "REMOVE_GAME_ERRORS";
 export const RECEIVE_GAME = "RECEIVE_GAME";
 export const RECEIVE_GAMES = "RECEIVE_GAMES";
 export const RECEIVE_GAME_ERRORS = "RECEIVE_GAME_ERRORS";

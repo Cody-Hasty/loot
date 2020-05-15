@@ -10,6 +10,8 @@ import NavBarContainer from './components/nav/navbar_container';
 import ItemFormComponent from "./components/item/item_form_container";
 
 import ItemsContainer from "./components/item/items_container";
+import GamesContainer from "./components/game/games_container";
+
 
 const customHistory = createBrowserHistory();
 function App() {
@@ -35,6 +37,7 @@ function App() {
             <Route exact path="/navbar" component={NavBarContainer} />
             <Route exact path="/item" component={ItemFormComponent} />
             <Route exact path="/items" component={ItemsContainer} />
+            <Route exact path="/games" component={GamesContainer} />
             <Route exact path="/" component={WelcomePageContainer} />
           </Switch>
         </div>
