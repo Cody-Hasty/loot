@@ -20,7 +20,7 @@ class Games extends React.Component {
             </li>
           ))}
         </ul>
-        <Link to="/game" className="loot-button">Add A New Game!</Link>
+        <Link to="/games/new" className="loot-button">Add A New Game!</Link>
       </div>
     );
   }
