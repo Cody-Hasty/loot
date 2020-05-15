@@ -11,7 +11,12 @@ class RecipeItem extends React.Component {
         return (
             <div>
                 <h1>{recipe.label}</h1>
-                {/* <img src= */}
+                <img src={recipe.picture} />
+                <ul>
+                    {recipe.ingredients.map(ingredient => (
+                        <li>{ingredient}</li>
+                    ))}
+                </ul>
             </div>
         )
     }
