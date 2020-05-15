@@ -8,9 +8,9 @@ const recipesReducer = (oldState = {}, action) => {
             nextState.entities.recipes[action.recipe.id] = action.recipe;
             return nextState;
         case RECEIVE_RECIPES:
-            let nextState2 = Object.assign({}, oldState);
-            nextState2.entities['recipes'] = action.recipes;
-            return nextState2;
+            // let nextState2 = Object.assign({}, oldState);
+            // nextState2.entities['recipes'] = action.recipes;
+            return Object.assign({}, oldState, action.recipes);
         default:
             return oldState;
     }

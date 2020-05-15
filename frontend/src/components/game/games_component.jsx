@@ -12,7 +12,7 @@ class Games extends React.Component {
     const games = Object.values(this.props.games);
     // console.log(games);
     return (
-      <div>
+      <div className="game-list">
         <ul>
           {games.map((game) => (
             <li key={game._id}>
@@ -20,7 +20,7 @@ class Games extends React.Component {
             </li>
           ))}
         </ul>
-        <Link to="/games/new">Add new Game</Link>
+        <Link to="/games/new" className="loot-button">Add A New Game!</Link>
       </div>
     );
   }
