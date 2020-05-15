@@ -1,5 +1,6 @@
 import React from "react";
 import Item from "./item_part";
+import {Link} from "react-router-dom";
 
 class Items extends React.Component {
     constructor(props) {
@@ -11,13 +12,16 @@ class Items extends React.Component {
         const items = Object.values(this.props.items);
         // console.log(items);
         return (
-          <ul>
-            {items.map((item) => (
-              <li key={item._id}>
-                <Item item={item} />
-              </li>
-            ))}
-          </ul>
+          <div>
+              <ul>
+                {items.map((item) => (
+                  <li key={item._id}>
+                    <Item item={item} />
+                  </li>
+                ))}
+              </ul>
+              <Link to="/item">Add new Item</Link>
+          </div>
         );
     }
 
