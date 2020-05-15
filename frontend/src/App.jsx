@@ -16,8 +16,8 @@ import ItemsContainer from "./components/item/items_container";
 import GamesContainer from "./components/game/games_container";
 import GameShowContainer from "./components/game/game_show_container"
 
-// import RecipesIndexContainer from './components/recipe/recipes_index_container';
-// import ShowItemContainer from "./components/item/item_show_container";
+import RecipesIndexContainer from './components/recipe/recipes_index_container';
+import ShowItemContainer from "./components/item/item_show_container";
 
 const customHistory = createBrowserHistory();
 function App() {
