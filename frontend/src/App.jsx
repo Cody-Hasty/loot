@@ -55,7 +55,7 @@ function App() {
 
             <Route exact path="/items" component={ItemsContainer} />
             <Route exact path="/games" component={GamesContainer} />
-            <Route exact path="/games/show" component={GameShowContainer} />
+            <Route exact path="/games/:id" component={GameShowContainer} />
             <Route exact path="/items/:id" component={ShowItemContainer} />
             <Route exact path="/" component={WelcomePageContainer} />
 

@@ -3,7 +3,7 @@ import { getGame } from '../../actions/game_actions';
 import Game from "./game_show_component";
 
 const mSTP = state => ({
-    game: state
+    game: state.entities.games
 });
 
 const mDTP = dispatch => ({

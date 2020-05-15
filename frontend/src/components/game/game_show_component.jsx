@@ -8,12 +8,12 @@ class Game extends React.Component {
   }
 
   render() {
-    const game = Object.values(this.state)  
+    
+    const game = this.props.game 
     
     return (
       <div>
-        { game.picture ? <img src={game.picture} /> : "Game picture not found" }
-        <h1> {game.title} </h1>
+        <h1> { game.title } </h1>
         <p> Description: { game.description } </p>
         {/* <ul>
             {game.items.map((item) => (
@@ -22,6 +22,7 @@ class Game extends React.Component {
               </li>
             ))}
         </ul> */}
+        { game.picture ? <img src={game.picture} /> : "Game picture not found" }
         <footer>Page started by: { game.user_id } on { game.date } </footer>
         
       </div>
