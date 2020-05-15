@@ -50,7 +50,7 @@ router.post('/',
             name: req.body.name,
             description: req.body.description,
             picture: req.file.location,
-            game_id: gameId
+            // game_id: req.body.game_id
         });
 
         newItem.save().then(item => res.json(item));

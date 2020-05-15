@@ -14,9 +14,9 @@ class Item extends React.Component{
               <h1> {item.name}</h1>
             <Link to={`/items/${item._id}`}>
               {item.picture ? (
-                <img src={item.picture} width="100px" />
+                <img src={item.picture} />
               ) : (
-                "This Item had no picture"
+                ""
               )}
             </Link>
           </div>
