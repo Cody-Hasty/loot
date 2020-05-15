@@ -13,7 +13,7 @@ const customHistory = createBrowserHistory();
 function App() {
     return ( 
         <Router history={customHistory} >
-            <div>
+            <div className="body-content">
                 <header>
                     <NavBarContainer />
                 </header>

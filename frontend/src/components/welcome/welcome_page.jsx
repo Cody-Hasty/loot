@@ -11,9 +11,9 @@ class WelcomePage extends React.Component {
     welcomeMessage() {
         if (this.props.currentUser.username) {
             return(
-                <div>
-                    <div className="title-div">
-                        <h1 className="website-title glow">LOOT</h1>
+                <div className="welcome-message">
+                    <div className="treasure-div">
+
                     </div>
                     Welcome {this.props.currentUser.username}
                     {/* <button onClick={props.logout()}></button> */}
@@ -21,9 +21,9 @@ class WelcomePage extends React.Component {
             )
         } else{
           return(
-              <div>
-                  <div className="title-div">
-                      <h1 className="website-title glow">LOOT</h1>
+              <div className="welcome-message">
+                  <div className="treasure-div">
+                      <p className="treasure-glow">----</p>
                   </div>
                   <p className="missing-user">There is no current user</p>
               </div>
@@ -33,7 +33,7 @@ class WelcomePage extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="welcome-page">
                 {this.welcomeMessage()}
                 {/* hello world */}
             </div>

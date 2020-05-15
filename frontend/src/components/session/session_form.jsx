@@ -40,16 +40,6 @@ class SessionForm extends React.Component {
             .then(() => this.props.history.push('/#/'))
     }
 
-    // renderErrors() {
-    //         return (
-    //             <ul>
-    //                 {this.props.errors.map((error, i) => (
-    //                     <li key={i}>{error}</li>
-    //                 ))}
-    //             </ul>
-    //         )
-    // }
-
     render() {
         let userName = (
             <label>Pick a username:
@@ -72,7 +62,7 @@ class SessionForm extends React.Component {
         
         console.log(this);
         return (
-            <div>
+            <div className="session-form">
                 <h3>{this.props.formType}</h3>
                 {/* {this.renderErrors()} */}
                 <form onSubmit={this.handleSubmit}>
