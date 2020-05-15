@@ -10,11 +10,11 @@ class Item extends React.Component{
     render(){
         const item = this.props.item;
         return (
-          <div>
-              <h1> {item.name}</h1>
+          <div className="item-div">
+            <h1> {item.name}</h1>
             <Link to={`/items/${item._id}`}>
               {item.picture ? (
-                <img src={item.picture} width="100px" />
+                <img src={item.picture}/>
               ) : (
                 "This Item had no picture"
               )}

@@ -77,7 +77,7 @@ input:focus {
 .item-div {
     padding: 15px 15px 50px 15px;
     align-items: center;
-    width: 200px;
+    width: 250px;
     height: 140px;
 }
 
@@ -86,7 +86,7 @@ input:focus {
 }
 
 .item-div img {
-    max-width: 300px;
+    max-width: 250px;
     max-height: 140px;
 }
 
