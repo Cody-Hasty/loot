@@ -9,7 +9,7 @@ class Game extends React.Component {
     const game = this.props.game;
     return (
       <div>
-        <h1>{game.name}</h1>
+        <h1>{game.title}</h1>
         {game.picture ? <img src={game.picture} /> : "This game had no picture"}
       </div>
     );
