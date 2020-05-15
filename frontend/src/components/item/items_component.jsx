@@ -12,7 +12,7 @@ class Items extends React.Component {
         const items = Object.values(this.props.items);
         // console.log(items);
         return (
-          <div>
+          <div className="item-index">
               <ul>
                 {items.map((item) => (
                   <li key={item._id}>
@@ -20,7 +20,7 @@ class Items extends React.Component {
                   </li>
                 ))}
               </ul>
-              <Link to="/item">Add new Item</Link>
+            <Link to="/item" className="loot-button">Add new Item</Link>
           </div>
         );
     }

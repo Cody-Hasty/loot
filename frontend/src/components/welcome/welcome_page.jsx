@@ -24,7 +24,7 @@ class WelcomePage extends React.Component {
                   <div className="treasure-div">
                       <p className="treasure-glow">----</p>
                   </div>
-                  <p className="missing-user">There is no current user</p>
+                  {/* <p className="missing-user">There is no current user</p> */}
               </div>
             )
         }
@@ -34,6 +34,11 @@ class WelcomePage extends React.Component {
         return (
             <div className="welcome-page">
                 {this.welcomeMessage()}
+                <NavLink to="/items">
+                    <button className="loot-button">Browse our loot!</button>
+                </NavLink>
+                <NavLink to="/item">
+                    <button className="loot-button">Make some loot!</button>
                 <NavLink to="/games">
                     <button className="make-loot">Make some loot!</button>
                 </NavLink>
