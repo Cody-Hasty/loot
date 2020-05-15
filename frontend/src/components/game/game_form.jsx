@@ -42,10 +42,10 @@ export default class GameForm extends React.Component {
                     <h1 className="game-form-name">Create a New Game</h1>
                     <p> Title: </p>
                     <input type="text" placeholder="title" value={this.state.title} onChange={this.update("title")}/>
-                    <p> File: </p>
-                    <input type="file" name="Add File" onChange={this.handleFile.bind(this)}/>
                     <p> Description: </p>
                     <textarea type="text" placeholder="description" value={this.state.description} onChange={this.update("description")}/>
+                    <p> Picture: </p>
+                    <input type="file" name="Add File" onChange={this.handleFile.bind(this)}/>
                     <button type="submit">Submit!</button>
                 </form>
             </div>
