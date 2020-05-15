@@ -1,5 +1,5 @@
 import axios from 'axios';
-const qs = require('qs');
+
 
 export const createItem = (formData) => {
     return axios({
@@ -15,5 +15,5 @@ export const getItem = (itemId) => {
 };
 
 export const getItems = () => {
-    return axios.get('/api/items/');
+    return axios.get('/api/items');
 };

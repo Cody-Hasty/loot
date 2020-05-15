@@ -15,7 +15,7 @@ const upload = require("../../config/multer/config");
 
 // { game_id: req.params.game_id }
 
-router.get("/test", (req, res) => res.json({ msg: "This is the items route" }));
+// router.get("/test", (req, res) => res.json({ msg: "This is the items route" }));
 
 
 router.get('/', (req, res) => {
