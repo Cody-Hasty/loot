@@ -1,4 +1,5 @@
 import React from 'react';
+import Recipe from './recipe_part';
 
 class RecipesIndex extends React.Component {
     constructor(props) {
@@ -8,20 +9,16 @@ class RecipesIndex extends React.Component {
 
     render() {
         const recipes = Object.values(this.props.recipes);
+        console.log(this.props.getRecipes())
         return (
             <div>
-
+                <ul>
                  {recipes.map(recipe => (
-                     <div key={recipe._id}>
-                        <label>{recipe.label}</label>
-                        <ul>
-                            {recipe.ingredients.map(ingredient => (
-                                <li>{ingredient}</li>
-                            ))}
-                        </ul>
-                        <img src={recipe.picture} alt=""/>
-                    </div>
+                    <li key={recipe._id}>
+                        <Recipe recipe={recipe} />
+                    </li>
                  ))}
+                 </ul>
             </div>
         )
     }
