@@ -11,3 +11,68 @@
     height: 140px;
     padding: 15px 15px 50px 15px;
 }
+
+.game-form-page {
+    padding-top: 50px;
+}
+
+.game-form-name {
+    text-transform: capitalize;
+    font-size: x-large;
+    padding-bottom: 50px;
+}
+
+.game-form {
+    border: 1px solid gold;
+    background-color: rgb(26, 26, 26);
+    padding: 25px 25px 25px 25px;
+    width: 500px;
+    height: 450px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.game-form p {
+    display: flex;
+    float: left;
+    padding-bottom: 8px;
+    padding-top: 8px;
+    width: 100px;
+}
+
+.game-form input,
+.game-form textarea {
+    display: flex;
+    float: right;
+    padding: 8px 8px 8px 8px;
+}
+
+.game-form textarea {
+    height: 100px;
+    resize: none;
+}
+
+::placeholder {
+    color: rgb(73, 72, 72);
+}
+
+input:focus {
+    border: 3px solid gold;
+}
+
+.game-form button {
+    width: 100px;
+    align-self: center;
+    color: black;
+    font-weight: bold;
+    background-color: gold;
+    height: 40px;
+    font-size: 15px;
+    margin-top: 50px;
+}
+
+.game-form button:hover {
+    background-image: linear-gradient(to top right, gold, white);
+    cursor: pointer;
+}
