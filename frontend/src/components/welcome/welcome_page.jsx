@@ -24,7 +24,7 @@ class WelcomePage extends React.Component {
                   <div className="treasure-div">
                       <p className="treasure-glow">----</p>
                   </div>
-                  <p className="missing-user">There is no current user</p>
+                  {/* <p className="missing-user">There is no current user</p> */}
               </div>
             )
         }
