@@ -34,7 +34,7 @@ router.get('/:id', (req, res) => {
             res.status(404).json({ item: 'Item not found' })
         );
 });
-
+ 
 router.post('/',
     upload.single("picture"),
     // passport.authenticate('jwt', { session: false }),

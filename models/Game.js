@@ -23,7 +23,7 @@ const GameSchema = new Schema({
         type: String,
     },
     picture: {
-        type: String,
+        type: Object,
     },
     user_id: {
         type: mongoose.Schema.Types.ObjectId,
