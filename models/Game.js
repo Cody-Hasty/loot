@@ -5,31 +5,34 @@ const GameSchema = new Schema({
     title: {
         type: String,
         unique: true,
-        required: true
+        required: true,
     },
-    recipes: [{
+    recipes: [
+        {
         type: mongoose.Schema.Types.ObjectId,
-        ref: "Recipe"
-    }],
-    items: [{
+        ref: "Recipe",
+        },
+    ],
+    items: [
+        {
         type: mongoose.Schema.Types.ObjectId,
-        ref: "Item"
-    }],
+        ref: "Item",
+        },
+    ],
     description: {
         type: String,
     },
-    pictures: [{
-        url: ""
-    }],
+    picture: {
+        type: String,
+    },
     user_id: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: "User"
+        ref: "User",
     },
     date: {
         type: Date,
-        default: Date.now
-    }
-
+        default: Date.now,
+    },
 });
 
 Game = mongoose.model("Game", GameSchema);
