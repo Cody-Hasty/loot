@@ -75,7 +75,10 @@ input:focus {
 }
 
 .item-div {
-    padding-bottom: 50px;
+    padding: 15px 15px 50px 15px;
+    align-items: center;
+    width: 200px;
+    height: 140px;
 }
 
 .item-div h1 {
@@ -84,7 +87,25 @@ input:focus {
 
 .item-div img {
     max-width: 200px;
-    padding-left: 30px;
-    padding-right: 30px;
     max-height: 140px;
+}
+
+.item-show h1 {
+    margin: 0 auto;
+    padding: 15px 15px 25px 15px;
+    font-size: large;
+    font-weight: bold;
+}
+
+.item-show img {
+    float: left;
+    max-width: 200px;
+    max-height: 140px;
+    padding: 15px 15px 50px 15px;
+    
+}
+
+.item-show p {
+    padding: 15px 15px 50px 15px;
+    text-align: left;
 }
