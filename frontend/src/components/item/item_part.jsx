@@ -11,8 +11,8 @@ class Item extends React.Component{
         const item = this.props.item;
         return (
           <div className="item-div">
-            <h1> {item.name}</h1>
             <Link to={`/items/${item._id}`}>
+            <h1> {item.name}</h1>
               {item.picture ? (
                 <img src={item.picture}/>
               ) : (
