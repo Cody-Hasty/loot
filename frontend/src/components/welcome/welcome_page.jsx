@@ -13,9 +13,11 @@ class WelcomePage extends React.Component {
         if (this.props.currentUser.username) {
             return(
                 <div className="welcome-message">
-                    <div className="treasure-div"></div>
-                    Welcome {this.props.currentUser.username}
-                    {/* <button onClick={props.logout()}></button> */}
+                    <div className="treasure-div">
+                        <p className="treasure-glow">----</p>
+                    </div>
+                    <h3>Welcome, {this.props.currentUser.username}!</h3>
+                    {/* <button onClick={this.props.logout()}></button> */}
                 </div>
             )
         } else{
@@ -37,7 +39,7 @@ class WelcomePage extends React.Component {
                 <NavLink to="/items">
                     <button className="loot-button">Browse Our Loot!</button>
                 </NavLink>
-                <NavLink to="/item">
+                <NavLink to="/items/new">
                     <button className="loot-button">Make Some Loot!</button>
                 </NavLink>
                 <NavLink to="/games">

@@ -39,6 +39,9 @@ class NavBar extends React.Component {
         if (this.props.currentUser.id) {
             return (
                 <div className="session-buttons">
+                    <NavLink to="/">
+                        <h1 className="website-title glow">LOOT</h1>
+                    </NavLink>
                     <button onClick={buttonLogic()} className="logout-button">Log Out</button>
                 </div>
             )
