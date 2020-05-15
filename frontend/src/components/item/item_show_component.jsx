@@ -10,9 +10,8 @@ class ShowItem extends React.Component {
     render(){
         const item = this.props.item
         return(
-            <div className="item-show">
+            <div>
                 <h1>{item.name}</h1>
-                <hr/>
                 <img src={item.picture}/>
                 <p>{item.description}</p>
             </div>
