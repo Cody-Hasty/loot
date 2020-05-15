@@ -35,7 +35,7 @@ class ItemForm extends React.Component{
     render(){
         // console.log(this.state)
         return(
-            <div>
+            <div className="item-form">
                 <form onSubmit={this.handleSubmit}>
                     <input type="text" placeholder="name" value={this.state.name} onChange={this.handleChange("name")}/>
                     <input type="text" placeholder="game_id" value={this.state.game_id} onChange={this.handleChange("game_id")}/>

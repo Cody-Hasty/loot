@@ -1,6 +1,5 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-// import { logout } from '../../actions/session_actions'
 
 class NavBar extends React.Component {
     constructor(props) {
@@ -17,15 +16,17 @@ class NavBar extends React.Component {
     getInButtons() {
         if (!this.props.currentUser.id) {
             return (
-                <div>
-                    <NavLink to="/register">Sign Up</NavLink>
-                    <NavLink to="/login">Log In</NavLink>
+                <div className="session-buttons">
+                    <NavLink to="/register">
+                        <button className="signup-button">Sign Up</button>
+                    </NavLink>
+                    <h1 className="website-title glow">LOOT</h1>
+                    <NavLink to="/login">
+                        <button className="login-button">Log In</button>
+                    </NavLink>
                 </div>
             )
         }
-        // else if (this.) {
-
-        // }
     }
 
     logoutButton() {
@@ -35,47 +36,21 @@ class NavBar extends React.Component {
 
         if (this.props.currentUser.id) {
             return (
-                <div>
-                    <button onClick={buttonLogic()}>Log Out</button>
+                <div className="session-buttons">
+                    <button onClick={buttonLogic()} className="logout-button">Log Out</button>
                 </div>
             )
         }
     }
 
-
-
-    
-
     render() {
-        // console.log('navbar', this.props.location);
         return (
-            <div>
+            <div className="navbar">
                 {this.getInButtons()}
                 {this.logoutButton()}
             </div>
         )
     }
 }
-
-// const NavBar = ( {currentUser} ) => {
-//     const display = this.props.currentUser ? (
-//         <div>
-//             <NavLink to="/"></NavLink>
-//             <p>Welcome {currentUser.username}</p>
-//             <button onClick={logout}>Log Out</button>
-//         </div>
-//     ) : (
-//         <div>
-//             <Link to='/signup'>Sign Up</Link>
-//             <Link to='/signin'>Sign In</Link>
-//         </div>
-//     )
-
-//     return (
-//         <div>
-//             {display}
-//         </div>
-//     )
-// }
 
 export default NavBar

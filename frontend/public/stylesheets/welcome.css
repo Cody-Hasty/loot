@@ -1,0 +1,70 @@
+.missing-user {
+    align-items: center;
+    font-size: x-large;
+    font-weight: bold;
+}
+
+.welcome-page {
+    align-self: center;
+}
+
+.treasure-div {
+    padding-top: 25px;
+    height: 250px;
+    width: 350px;
+    vertical-align: text-top;
+    margin: 0 auto;
+    padding-bottom: 20px;
+    background-size: cover;
+    background-image: url("../Lootbox.svg");
+    background-position: center;
+}
+
+.treasure-div p {
+    color: transparent;
+    text-shadow: 
+    0 0 40px gold,
+    0 0 40px gold,
+    0 0 40px gold,
+    0 0 40px gold,
+    0 0 40px gold;
+    padding-top: 30px;
+    padding-left: 20px;
+    font-size: 170px;
+}
+
+.treasure-glow {
+    -webkit-animation: treasureglow 4s ease-in-out infinite alternate;
+    -moz-animation: treasureglow 4s ease-in-out infinite alternate;
+    animation: treasureglow 4s ease-in-out infinite alternate;
+}
+
+@keyframes treasureglow {
+    from {
+        text-shadow:
+            0 0 40px white,
+            0 0 40px white,
+            0 0 40px white,
+            0 0 40px white,
+            0 0 40px white,
+            0 -30px 30px gold,
+            0 -30px 30px gold,
+            0 -30px 30px gold,
+            0 -30px 30px gold,
+            0 -30px 30px gold;
+    }
+
+    to {
+        text-shadow:
+            0 0 40px white,
+            0 0 40px white,
+            0 0 40px white,
+            0 0 40px white,
+            0 0 40px white,
+            20px -50px 50px gold,
+            20px -50px 50px gold,
+            -20px -50px 50px gold,
+            0px -50px 50px gold,
+            -20px -50px 50px gold;
+    }
+}

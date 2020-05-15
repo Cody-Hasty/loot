@@ -10,22 +10,21 @@ body {
     background-attachment: fixed;
     background-size: cover;
     margin: 0px 0px 0px 0px;
-    display: grid;
-    justify-content: center;
 }
 
-p, h1, h2, h3, label {
+a, p, h1, h2, h3, label {
     color: gold;
 }
 
 #root {
-
+    
+    overflow: visible;
     position: fixed;
     left: 20%;
     right: 20%;
     top: 100px;
     bottom: 0px;
-    min-width: 340px;
+    min-width: 500px;
     min-height: 975px;
     text-align: center;
     display: flex;
@@ -35,28 +34,15 @@ p, h1, h2, h3, label {
     text-align: center;
 }
 
-.missing-user {
-    align-items: center;
-    font-size: x-large;
-    font-weight: bold;
+.body-content {
+    width: 100%;
+    height: 100%;
 }
 
-.title-div {
-    min-height: 350px;
-    vertical-align: text-top;
-    
-}
-
-.website-title {
-    background-size: cover;
-    min-height: 350px;
-    background-image: url("../Lootbox.svg");
-    background-position: center;
-    -webkit-text-stroke: 1px black;
-    font-weight: bolder;
-    font-size: 75px;
-    text-align: center;
-    padding-top: 50px;
+header {
+    height: 140px;
+    width: 100%;
+    /* min-width: 550px; */
 }
 
 .glow {
@@ -67,24 +53,24 @@ p, h1, h2, h3, label {
 
 @keyframes glow {
     from {
-        text-shadow: 
-        0 0 10px #fff,
-        0 0 20px #fff,
-        0 0 30px black,
-        0 0 40px black,
-        0 0 50px black,
-        0 0 60px black,
-        0 0 70px black;
+        text-shadow:
+            0 0 10px #fff,
+            0 0 20px #fff,
+            0 0 30px black,
+            0 0 40px black,
+            0 0 50px black,
+            0 0 60px black,
+            0 0 70px black;
     }
 
     to {
-        text-shadow: 
-        0 0 20px white,
-        0 0 30px white,
-        0 0 40px gold,
-        0 0 50px gold,
-        0 0 60px gold,
-        0 0 70px gold,
-        0 0 80px gold;
+        text-shadow:
+            0 0 20px white,
+            0 0 30px white,
+            0 0 40px gold,
+            0 0 50px gold,
+            0 0 60px gold,
+            0 0 70px gold,
+            0 0 80px gold;
     }
 }
