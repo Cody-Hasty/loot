@@ -18,11 +18,20 @@ export default class GameForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        this.props.createGame(this.state);
+        const formData = new FormData();
+        formData.append("title", this.state.title);
+        formData.append("description", this.state.description);
+        formData.append("user_id", this.state.user_id);
+        formData.append("picture", this.state.picture);
+        this.props.createGame(formData);
     }
 
     update(value) {
         return e => this.setState({ [value]: e.target.value });
+    }
+
+    handleFile(e){
+        this.setState({picture: e.currentTarget.files[0]});
     }
 
 
@@ -33,6 +42,8 @@ export default class GameForm extends React.Component {
                     <h1 className="game-form-name">Create a New Game</h1>
                     <p> Title: </p>
                     <input type="text" placeholder="title" value={this.state.title} onChange={this.update("title")}/>
+                    <p> File: </p>
+                    <input type="file" name="Add File" onChange={this.handleFile.bind(this)}/>
                     <p> Description: </p>
                     <textarea type="text" placeholder="description" value={this.state.description} onChange={this.update("description")}/>
                     <button type="submit">Submit!</button>

@@ -4,6 +4,7 @@ const validateGameInput = require('../../validation/game_submit');
 const passport = require('passport');
 const Game = require('../../models/Game');
 const mongoose = require('mongoose');
+const upload = require("../../config/multer/config");
 
 //GAMES INDEX ROUTE
 router.get('/', (req, res) => {
@@ -16,7 +17,8 @@ router.get('/', (req, res) => {
 
 
 //GAME POST ROUTE
-router.post('/', //
+router.post('/', upload.single("picture"),
+//
 // passport.authenticate('jwt', { session: false }),
 (req, res) => {
     const { errors, isValid } = validateGameInput(req.body);
@@ -28,7 +30,8 @@ router.post('/', //
     const newGame = new Game({
         title: req.body.title,
         description: req.body.description,
-        user_id: req.user.id
+        // user_id: req.user.id,
+        picture: req.file.location
     });
 
     newGame.save()
