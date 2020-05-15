@@ -12,7 +12,7 @@ class Game extends React.Component {
     const game = this.props.game 
     
     return (
-      <div>
+      <div className="game-box">
         { game.picture ? <img src={game.picture} /> : <p>Game picture not found</p> }
         <h1> {game.title} </h1>
         <p> Description: { game.description } </p>
