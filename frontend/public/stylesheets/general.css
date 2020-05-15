@@ -1,6 +1,8 @@
 html {
     height: 100%;
     display: block;
+    min-height: fit-content;
+    overflow: scroll;
 }
 
 body {
@@ -10,6 +12,7 @@ body {
     background-attachment: fixed;
     background-size: cover;
     margin: 0px 0px 0px 0px;
+    min-height: fit-content;
 }
 
 a, p, h1, h2, h3, label {
@@ -17,13 +20,10 @@ a, p, h1, h2, h3, label {
 }
 
 #root {
-    
-    overflow: visible;
-    position: fixed;
+    position: absolute;
     left: 20%;
     right: 20%;
     top: 100px;
-    bottom: 0px;
     min-width: 555px;
     min-height: 975px;
     text-align: center;
@@ -32,6 +32,8 @@ a, p, h1, h2, h3, label {
     background-color: black;
     border: 2px solid gold;
     text-align: center;
+    min-height: fit-content;
+    padding-bottom: 100px;
 }
 
 .body-content {
