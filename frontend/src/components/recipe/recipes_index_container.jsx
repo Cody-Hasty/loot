@@ -1,9 +1,9 @@
 import { connect } from 'react-redux';
 import RecipesIndex from './recipes_index';
-import { getRecipes } from '../../util/recipe_api_util';
+import { getRecipes } from '../../actions/recipe_actions';
 
 const mSTP = state => ({
-    state: state
+    recipes: state.entities.recipes
 });
 
 const mDTP = dispatch => ({
