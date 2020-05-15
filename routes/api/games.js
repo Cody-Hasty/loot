@@ -23,6 +23,7 @@ router.post('/', passport.authenticate('jwt', { session: false }), (req, res) =>
 
     const newGame = new Game({
         title: req.body.title,
+        description: req.body.description,
         user_id: req.user.id
     });
 
