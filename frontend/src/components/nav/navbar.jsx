@@ -20,7 +20,9 @@ class NavBar extends React.Component {
                     <NavLink to="/register">
                         <button className="signup-button">Sign Up</button>
                     </NavLink>
-                    <h1 className="website-title glow">LOOT</h1>
+                    <NavLink to="/">
+                        <h1 className="website-title glow">LOOT</h1>
+                    </NavLink>
                     <NavLink to="/login">
                         <button className="login-button">Log In</button>
                     </NavLink>

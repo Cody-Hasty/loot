@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 class WelcomePage extends React.Component {
     constructor(props) {
@@ -12,9 +13,7 @@ class WelcomePage extends React.Component {
         if (this.props.currentUser.username) {
             return(
                 <div className="welcome-message">
-                    <div className="treasure-div">
-
-                    </div>
+                    <div className="treasure-div"></div>
                     Welcome {this.props.currentUser.username}
                     {/* <button onClick={props.logout()}></button> */}
                 </div>
@@ -35,7 +34,9 @@ class WelcomePage extends React.Component {
         return (
             <div className="welcome-page">
                 {this.welcomeMessage()}
-                {/* hello world */}
+                <NavLink to="/item">
+                    <button className="make-loot">Make some loot!</button>
+                </NavLink>
             </div>
         )
     }

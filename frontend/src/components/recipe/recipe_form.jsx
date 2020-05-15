@@ -26,8 +26,8 @@ class RecipeForm extends React.Component {
 
     render() {
         return (
-            <div>
-                <form onSubmit={this.handleSubmit()}>
+            <div className="recipe-form-page">
+                <form onSubmit={this.handleSubmit()} className="recipe-form">
                     <label>Label:
                         <input 
                             type='text'
@@ -65,7 +65,6 @@ class RecipeForm extends React.Component {
                         />
                     </label>
                 </form>
-
             </div>
         )
     }

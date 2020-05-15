@@ -35,11 +35,16 @@ class ItemForm extends React.Component{
     render(){
         // console.log(this.state)
         return(
-            <div className="item-form">
-                <form onSubmit={this.handleSubmit}>
+            <div className="item-form-page">
+                <form onSubmit={this.handleSubmit} className="item-form">
+                    <h3 className="item-form-name">Create a New Item</h3>
+                    <p>Name: </p>
                     <input type="text" placeholder="name" value={this.state.name} onChange={this.handleChange("name")}/>
+                    <p>Game: </p>
                     <input type="text" placeholder="game_id" value={this.state.game_id} onChange={this.handleChange("game_id")}/>
+                    <p>Description: </p>
                     <textarea type="text" placeholder="description" value={this.state.description} onChange={this.handleChange("description")}/>
+                    <p>File: </p>
                     <input type="file" name="Add File" onChange={this.handleFile.bind(this)}/>
                     <button type="submit">Submit!</button>
                 </form>

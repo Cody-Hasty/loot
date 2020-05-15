@@ -1,4 +1,5 @@
 .missing-user {
+    margin-top: 50px;
     align-items: center;
     font-size: x-large;
     font-weight: bold;
@@ -9,7 +10,8 @@
 }
 
 .treasure-div {
-    padding-top: 25px;
+    margin-top: 50px;
+    padding-top: 50px;
     height: 250px;
     width: 350px;
     vertical-align: text-top;
@@ -67,4 +69,21 @@
             0px -50px 50px gold,
             -20px -50px 50px gold;
     }
+}
+
+.make-loot {
+    margin-top: 50px;
+    padding: 8px 8px 8px 8px;
+    width: 200px;
+    align-self: center;
+    color: black;
+    font-weight: bold;
+    background-color: gold;
+    height: 40px;
+    font-size: 15px;
+}
+
+.make-loot:hover {
+    background-image: linear-gradient(to top right, gold, white);
+    cursor: pointer;
 }

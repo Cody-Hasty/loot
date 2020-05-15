@@ -42,8 +42,11 @@ class SessionForm extends React.Component {
 
     render() {
         let userName = (
-            <label>Pick a username:
+            <label>
+                <p className="username-label">Pick a username:</p>
                 <input
+                    className="username-input"
+                    placeholder="username"
                     type='text'
                     value={this.state.username}
                     onChange={this.update('username')}
@@ -51,8 +54,11 @@ class SessionForm extends React.Component {
             </label>   
         );
         let passVerify = (
-            <label>Please enter your password again:
+            <label>
+                <p className="password2-label">Please enter your password again:</p>
                 <input
+                    className="password2-input"
+                    placeholder="password"
                     type='password'
                     value={this.state.password2}
                     onChange={this.update('password2')}
@@ -62,20 +68,26 @@ class SessionForm extends React.Component {
         
         console.log(this);
         return (
-            <div className="session-form">
-                <h3>{this.props.formType}</h3>
+            <div className="session-page">
                 {/* {this.renderErrors()} */}
-                <form onSubmit={this.handleSubmit}>
+                <form onSubmit={this.handleSubmit} className="session-form">
+                    <h3 className="session-form-name">{this.props.formType}</h3>
                     {this.props.formType === 'signup' ? userName : null}
-                    <label>Enter your email:
+                    <label>
+                        <p className="email-label">Enter your email:</p>
                         <input
+                            className="email-input"
+                            placeholder="email"
                             type='text'
                             value={this.state.email}
                             onChange={this.update('email')}
                         />
                     </label>
-                    <label>Password:
+                    <label>
+                        <p className="password-label">Password:</p>
                         <input
+                            className="password-input"
+                            placeholder="password"
                             type='password'
                             value={this.state.password}
                             onChange={this.update('password')}
