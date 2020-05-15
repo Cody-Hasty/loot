@@ -8,7 +8,8 @@ class Game extends React.Component {
   }
 
   render() {
-    const game = Object.values(this.state)  
+    
+    const game = this.props.game 
     
     return (
       <div>
@@ -23,7 +24,6 @@ class Game extends React.Component {
             ))}
         </ul> */}
         <footer><p>Page started by: { game.user_id } on { game.date } </p></footer>
-        
       </div>
     );
   }
