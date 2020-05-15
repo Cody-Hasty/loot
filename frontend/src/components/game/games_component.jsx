@@ -20,7 +20,7 @@ class Games extends React.Component {
             </li>
           ))}
         </ul>
-        <Link to="/game">Add new Game</Link>
+        <Link to="/games/new">Add new Game</Link>
       </div>
     );
   }
