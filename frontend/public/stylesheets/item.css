@@ -109,3 +109,13 @@ input:focus {
     padding: 15px 15px 50px 15px;
     text-align: left;
 }
+
+.missing-picture {
+    background-image: url("../missing-item-pic.svg");
+    background-repeat: no-repeat;
+    float: left;
+    width: 250px;
+    height: 140px;
+    max-width: 200px;
+    max-height: 140px;
+}

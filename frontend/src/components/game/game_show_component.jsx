@@ -12,7 +12,7 @@ class Game extends React.Component {
     
     return (
       <div>
-        { game.picture ? <img src={game.picture} /> : "Game picture not found" }
+        { game.picture ? <img src={game.picture} /> : <p>Game picture not found</p> }
         <h1> {game.title} </h1>
         <p> Description: { game.description } </p>
         {/* <ul>
@@ -22,7 +22,7 @@ class Game extends React.Component {
               </li>
             ))}
         </ul> */}
-        <footer>Page started by: { game.user_id } on { game.date } </footer>
+        <footer><p>Page started by: { game.user_id } on { game.date } </p></footer>
         
       </div>
     );

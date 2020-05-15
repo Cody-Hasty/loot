@@ -2,3 +2,12 @@
     margin-top: 15px;
     margin-bottom: 15px;
 }
+
+.game-pic {
+    float: left;
+    max-width: 200px;
+    max-height: 140px;
+    width: 250px;
+    height: 140px;
+    padding: 15px 15px 50px 15px;
+}
