@@ -11,8 +11,10 @@ class Game extends React.Component {
     return (
       <div>
         {/* <h1>{game.title}</h1> */}
-        <h1><Link to={`/games/${game._id}`}>{game.title}</Link> </h1>
-        {game.picture ? <img src={game.picture} /> : "This game had no picture"}
+        <Link to={`/games/${game._id}`}>
+          <h1>{game.title}</h1>
+          {game.picture ? <img src={game.picture} /> : "This game had no picture"}
+        </Link> 
       </div>
     );
   }

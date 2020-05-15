@@ -16,7 +16,7 @@ class Item extends React.Component{
               {item.picture ? (
                 <img src={item.picture}/>
                 ) : (
-                "This Item had no picture"
+                <div className="missing-picture"></div>
               )}
             </Link>
           </div>
