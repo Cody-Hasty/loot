@@ -1,9 +1,9 @@
 import React from "react";
 
 class Item extends React.Component{
-    constructor(props){
-        super(props);
-    }
+    // constructor(props){
+    //     super(props);
+    // }
 
     render(){
         const item = this.props.item;
