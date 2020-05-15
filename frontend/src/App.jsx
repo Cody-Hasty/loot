@@ -14,10 +14,12 @@ import GameFormContainer from "./components/game/game_form_container"
 
 import ItemsContainer from "./components/item/items_container";
 import GamesContainer from "./components/game/games_container";
-import RecipesIndexContainer from './components/recipe/recipes_index_container';
 import RecipeItemContainer from './components/recipe/recipe_item_container';
+import GameShowContainer from "./components/game/game_show_container"
 
 
+import RecipesIndexContainer from './components/recipe/recipes_index_container';
+import ShowItemContainer from "./components/item/item_show_container";
 
 const customHistory = createBrowserHistory();
 function App() {
@@ -46,19 +48,18 @@ function App() {
             <Route exact path="/items/new" component={ItemFormComponent} />
             <Route exact path="/games/new" component={GameFormContainer} />
             <Route exact path="/recipes/new" component={RecipeFormContainer}/>
+
             <Route exact path="/recipes/:recipeId" component={RecipeItemContainer} />
-            
+
             <Route exact path="/items" component={ItemsContainer} />
             <Route exact path="/games" component={GamesContainer} />
-
+            <Route exact path="/games/show" component={GameShowContainer} />
+            <Route exact path="/items/:id" component={ShowItemContainer} />
             <Route exact path="/" component={WelcomePageContainer} />
 
           </Switch>
         </div>
-    </Router>
-
-
-
+      </Router>
     );
 }
 
