@@ -10,9 +10,10 @@ class RecipesIndex extends React.Component {
         const recipes = Object.values(this.props.recipes);
         return (
             <div>
+
                  {recipes.map(recipe => (
-                     <div>
-                        <label>{recipe.handle}</label>
+                     <div key={recipe._id}>
+                        <label>{recipe.label}</label>
                         <ul>
                             {recipe.ingredients.map(ingredient => (
                                 <li>{ingredient}</li>

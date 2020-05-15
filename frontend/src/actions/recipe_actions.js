@@ -26,20 +26,20 @@ export const removeErrors = () => ({
 
 export const createRecipe = (recipe) => dispatch => (
     APIutil.createRecipe(recipe)
-    .then((recipe) => dispatch(receiveRecipe(recipe)))
+    .then((res) => dispatch(receiveRecipe(res.data)))
     .catch(err => dispatch(receiveErrors(err.response.data)))
 );
 
 
 export const getRecipe = (recipeId) => dispatch => (
     APIutil.getRecipe(recipeId)
-    .then((recipe) => dispatch(receiveRecipe(recipe)))
+    .then((res) => dispatch(receiveRecipe(res.data)))
     .catch(err => dispatch(receiveErrors(err.response.data)))
 );
 
 
 export const getRecipes = () => dispatch => (
     APIutil.getRecipes()
-    .then((recipes) => dispatch(receiveRecipes(recipes)))
+    .then((res) => dispatch(receiveRecipes(res.data)))
     .catch(err => dispatch(receiveErrors(err.response.data)))
 );
