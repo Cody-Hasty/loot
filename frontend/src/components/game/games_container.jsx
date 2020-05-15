@@ -8,7 +8,7 @@ const mSTP = ({ entities }) => ({
 
 const mDTP = (dispatch) => ({
   getGames: () => dispatch(getGames()),
-  // getGame: (gameId) => dispatch(getGame(gameId)),
+  getGame: (gameId) => dispatch(getGame(gameId)),
 });
 
 export default connect(mSTP, mDTP)(Games);
