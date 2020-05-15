@@ -12,7 +12,7 @@ class Item extends React.Component{
         return(
             <div className="item-div">
                 <Link to={`/items/${item._id}`}/>
-                <h1 >{item.title}</h1>
+                <h1 >{item.name}</h1>
                 {item.picture? <img src={item.picture}/> : "This Item had no picture"}
             </div>
         )
