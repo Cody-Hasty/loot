@@ -24,7 +24,7 @@ export const removeErrors = () => ({
 });
 
 export const createGame = (game) =>dispatch =>(
-    APIUtil.createGame(game)
+    APIUtil.createGame(game) 
         .then((res) => {
             const game = res.data;
             dispatch(receiveGame(game));

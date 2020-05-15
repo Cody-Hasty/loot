@@ -9,8 +9,8 @@ export const createGame = (formData) => {
     });
 };
 
-export const getGame = (gameTitle) => {
-    return axios.get(`/api/games/${gameTitle}`);
+export const getGame = (gameId) => {
+    return axios.get(`/api/games/${gameId}`);
 };
 
 export const getGames = () => {

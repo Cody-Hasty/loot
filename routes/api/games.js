@@ -13,8 +13,12 @@ router.get('/', (req, res) => {
         .catch(err => res.status(404).json({ noGamesFound: 'No games found' }));
 });
 
+
+
 //GAME POST ROUTE
-router.post('/', passport.authenticate('jwt', { session: false }), (req, res) => {
+router.post('/', //
+// passport.authenticate('jwt', { session: false }),
+(req, res) => {
     const { errors, isValid } = validateGameInput(req.body);
 
     if (!isValid) {
@@ -33,11 +37,11 @@ router.post('/', passport.authenticate('jwt', { session: false }), (req, res) =>
 
 
 //GAME GET BY TITLE ROUTE
-router.get('/:title', (req, res) => {
-    let oldTitle = req.params.title
-    let newTitle = oldTitle.replace(/-/g, " ");
+router.get('/:id', (req, res) => {
+    // let oldTitle = req.params.title
+    // let newTitle = oldTitle.replace(/-/g, " ");
 
-    Game.find({ title: newTitle })
+    Game.findById(req.params.id)
     .then(game => res.json(game))
     .catch(err =>
         res.status(404).json({

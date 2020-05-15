@@ -9,5 +9,5 @@ const mSTP = ({ entities }) => ({
 const mDTP = (dispatch) => ({
   getItem: (itemId) => dispatch(getItem(itemId)),
 });
-
+ 
 export default connect(mSTP, mDTP)(ShowItem);
