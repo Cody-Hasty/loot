@@ -4,27 +4,28 @@ const Schema = mongoose.Schema;
 const RecipeSchema = new Schema({
     label: {
         type: String,
-        required: true
+        required: true,
     },
     item: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: "Item"
+        ref: "Item",
     },
-    ingredients:[{
+    ingredients: [
+        {
         amount: "",
         ingredient: {
             type: mongoose.Schema.Types.ObjectId,
-            ref: ""
-        }
-    }],
-    pictures: [{
-        url: "",
-    }],
+            ref: "",
+        },
+        },
+    ],
+    picture: {
+        type: String,
+    },
     date: {
         type: Date,
-        default: Date.now
-    }
-
+        default: Date.now,
+    },
 });
 
 Recipe = mongoose.model("Recipe", RecipeSchema);

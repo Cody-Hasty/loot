@@ -1,5 +1,4 @@
 const express = require('express');
-const itemsRouter = express.Router({mergeParams: true});
 const router = express.Router();
 const mongoose = require('mongoose');
 const keys = require("../../config/keys");

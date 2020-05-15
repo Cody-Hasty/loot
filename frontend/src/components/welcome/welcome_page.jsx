@@ -39,6 +39,8 @@ class WelcomePage extends React.Component {
                 </NavLink>
                 <NavLink to="/item">
                     <button className="loot-button">Make some loot!</button>
+                <NavLink to="/games">
+                    <button className="make-loot">Make some loot!</button>
                 </NavLink>
             </div>
         )

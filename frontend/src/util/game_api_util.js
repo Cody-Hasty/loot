@@ -1,5 +1,4 @@
 import axios from 'axios';
-const qs = require('qs');
 
 export const createGame = (formData) => {
     return axios({
@@ -15,5 +14,5 @@ export const getGame = (gameTitle) => {
 };
 
 export const getGames = () => {
-    return axios.get('/api/games/');
+    return axios.get('/api/games');
 };
