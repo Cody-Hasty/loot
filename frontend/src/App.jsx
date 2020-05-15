@@ -12,6 +12,7 @@ import RecipeFormContainer from "./components/recipe/recipe_container";
 import ItemFormComponent from "./components/item/item_form_container";
 import GameFormContainer from "./components/game/game_form_container"
 
+import RecipeIndexContainer from './components/recipe/recipes_index_container';
 import ItemsContainer from "./components/item/items_container";
 import GamesContainer from "./components/game/games_container";
 import GameShowContainer from "./components/game/game_show_container"
@@ -46,6 +47,7 @@ function App() {
             <Route exact path="/items/new" component={ItemFormComponent} />
             <Route exact path="/games/new" component={GameFormContainer} />
             <Route exact path="/recipes/new" component={RecipeFormContainer}/>
+            <Route exact path="/recipes/:id" component={RecipeIndexContainer}/>
 
             <Route exact path="/items" component={ItemsContainer} />
             <Route exact path="/games" component={GamesContainer} />
