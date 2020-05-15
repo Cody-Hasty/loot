@@ -1,36 +1,42 @@
-.session-page {
+.item-form-page {
     padding-top: 50px;
 }
 
-.session-form-name {
+.item-form-name {
     text-transform: capitalize;
     font-size: x-large;
     padding-bottom: 50px;
-    
 }
 
-.session-form {
+.item-form {
     border: 1px solid gold;
     background-color: rgb(26, 26, 26);
     padding: 25px 25px 25px 25px;
     width: 500px;
-    height: 350px;
+    height: 550px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    
 }
 
-.session-form p {
+.item-form p {
     display: flex;
     float: left;
-    padding: 10px 10px 10px 10px;
+    padding-bottom: 8px;
+    padding-top: 8px;
+    width: 100px;
 }
 
-.session-form input {
+.item-form input,
+.item-form textarea {
     display: flex;
     float: right;
     padding: 8px 8px 8px 8px;
+}
+
+.item-form textarea {
+    height: 100px;
+    resize: none;
 }
 
 ::placeholder {
@@ -41,18 +47,18 @@ input:focus {
     border: 3px solid gold;
 }
 
-.session-form button {
+.item-form button {
     width: 100px;
     align-self: center;
     color: black;
     font-weight: bold;
     background-color: gold;
-    height: 30px;
+    height: 40px;
     font-size: 15px;
     margin-top: 50px;
 }
 
-.session-form button:hover {
+.item-form button:hover {
     background-image: linear-gradient(to top right, gold, white);
     cursor: pointer;
 }

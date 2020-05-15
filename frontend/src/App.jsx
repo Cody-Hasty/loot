@@ -8,6 +8,7 @@ import LoginFormContainer from './components/session/login_form_container';
 import WelcomePageContainer from './components/welcome/welcome_page_container';
 import NavBarContainer from './components/nav/navbar_container';
 import ItemFormComponent from "./components/item/item_form_container";
+// import RecipeFormComponent from './components/recipe/recipe_form';
 
 
 const customHistory = createBrowserHistory();
@@ -23,6 +24,7 @@ function App() {
                         <ProtectedRoute exact path="/login" component={LoginFormContainer} loggedIn/>
                         <Route exact path="/navbar" component={NavBarContainer} />
                         <Route exact path="/item" component={ItemFormComponent} />
+                        {/* <Route exact path="/recipe" component={RecipeFormComponent} /> */}
                         <Route exact path="/" component={WelcomePageContainer} />
                     </Switch>
             </div>
