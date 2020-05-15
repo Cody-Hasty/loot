@@ -10,7 +10,7 @@ const receiveGame = (game) => ({
 });
 
 const receiveGames = (games) => ({
-    type: RECEIVE_GAME,
+    type: RECEIVE_GAMES,
     games
 });
 
@@ -47,8 +47,12 @@ export const getGame = (gameId) => dispatch =>(
 );
 
 
-export const getGames = () => dispatch =>(
-    APIUtil.getGame()
-        .then((games) => dispatch(receiveGames(games)))
-        .catch(err => dispatch(receiveErrors(err.response.data)))
-);
+export const getGames = () => (dispatch) =>
+    APIUtil.getGames()
+        .then((res) => {
+            const games = res.data;
+            dispatch(receiveGames(games));
+        })
+        .catch((err) => {
+            return dispatch(receiveErrors(err.response.data));
+        });
