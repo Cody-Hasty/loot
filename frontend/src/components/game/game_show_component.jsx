@@ -14,7 +14,7 @@ class Game extends React.Component {
     return (
       <div>
         <h1> { game.title } </h1>
-        <p> Description: { game.description } </p>
+        <br></br>
         {/* <ul>
             {game.items.map((item) => (
               <li key={item._id}>
@@ -24,7 +24,7 @@ class Game extends React.Component {
         </ul> */}
         { game.picture ? <img src={game.picture} /> : "Game picture not found" }
         <footer>Page started by: { game.user_id } on { game.date } </footer>
-        
+        <p> Description: { game.description } </p>
       </div>
     );
   }
