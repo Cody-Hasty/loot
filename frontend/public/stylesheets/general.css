@@ -24,7 +24,7 @@ a, p, h1, h2, h3, label {
     right: 20%;
     top: 100px;
     bottom: 0px;
-    min-width: 500px;
+    min-width: 555px;
     min-height: 975px;
     text-align: center;
     display: flex;
@@ -42,7 +42,10 @@ a, p, h1, h2, h3, label {
 header {
     height: 140px;
     width: 100%;
-    /* min-width: 550px; */
+}
+
+button {
+    outline: white;
 }
 
 .glow {

@@ -8,6 +8,7 @@ import LoginFormContainer from './components/session/login_form_container';
 import WelcomePageContainer from './components/welcome/welcome_page_container';
 import NavBarContainer from './components/nav/navbar_container';
 import ItemFormComponent from "./components/item/item_form_container";
+
 import ItemsContainer from "./components/item/items_container";
 
 const customHistory = createBrowserHistory();
@@ -38,6 +39,9 @@ function App() {
           </Switch>
         </div>
     </Router>
+
+
+
     );
 }
 
