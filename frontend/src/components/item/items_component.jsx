@@ -20,7 +20,7 @@ class Items extends React.Component {
                   </li>
                 ))}
               </ul>
-            <Link to="/item" className="loot-button">Add new Item</Link>
+            <Link to="/items/new" className="loot-button">Add new Item</Link>
           </div>
         );
     }
