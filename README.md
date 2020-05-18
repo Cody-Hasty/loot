@@ -4,7 +4,7 @@ https://www.lootncraft.net/
 If you've ever played a video game that is based on crafting - you've probably needed to make some item using a set of ingredients. You then have to take that item, and use a number of them to make some greater object later, but alas - you already have a few of the items you need- what more do you need to collect to make that item you want? 
 * Expansive user submitted database.
 * Easily keep track of in game loot goals.
-* Contribute your own item recipes 
+* Contribute your own item recipes.
 
 # HOW IT WORKS
 
