@@ -70,23 +70,3 @@
             -20px -50px 50px gold;
     }
 }
-
-.loot-button {
-    margin-top: 50px;
-    margin-right: 25px;
-    margin-left: 25px;
-    padding: 8px 8px 8px 8px;
-    width: 200px;
-    align-self: center;
-    color: black;
-    font-weight: bold;
-    background-color: gold;
-    height: 40px;
-    font-size: 15px;
-    text-decoration: none;
-}
-
-.loot-button:hover {
-    background-image: linear-gradient(to top right, gold, white);
-    cursor: pointer;
-}

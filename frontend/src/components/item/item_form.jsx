@@ -37,7 +37,7 @@ class ItemForm extends React.Component{
         return(
             <div className="item-form-page">
                 <form onSubmit={this.handleSubmit} className="item-form">
-                    <h3 className="item-form-name">Create a New Item</h3>
+                    <h3>Create a New Item</h3>
                     <p>Name: </p>
                     <input type="text" placeholder="name" value={this.state.name} onChange={this.handleChange("name")}/>
                     <p>Game: </p>

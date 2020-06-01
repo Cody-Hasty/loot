@@ -1,12 +1,14 @@
 import React from 'react';
 import { Route, Switch, Router } from 'react-router-dom';
-import { ProtectedRoute } from './util/route_util';
+import { ProtectedRoute} from './util/route_util';
 import { createBrowserHistory } from 'history';
 import SignUpFormContainer from './components/session/signup_form_container';
 import LoginFormContainer from './components/session/login_form_container';
 
+import AboutPageContainer from './components/about/about_page_container'
 import WelcomePageContainer from './components/welcome/welcome_page_container';
 import NavBarContainer from './components/nav/navbar_container';
+import FooterContainer from './components/footer/footer_container';
 
 import ItemFormComponent from "./components/item/item_form_container";
 import GameFormContainer from "./components/game/game_form_container"
@@ -21,6 +23,7 @@ import GameShowContainer from "./components/game/game_show_container"
 
 
 import ShowItemContainer from "./components/item/item_show_container";
+import { RECEIVE_CURRENT_USER } from './actions/session_actions';
 
 const customHistory = createBrowserHistory();
 function App() {
@@ -44,6 +47,7 @@ function App() {
               loggedIn
             />
             <Route exact path="/navbar" component={NavBarContainer} />
+            <Route exact path="/about" component={AboutPageContainer} />
 
             <Route exact path="/items/new" component={ItemFormComponent} />
             <Route exact path="/games/new" component={GameFormContainer} />
@@ -58,6 +62,12 @@ function App() {
             <Route exact path="/" component={WelcomePageContainer} />
 
           </Switch>
+          <footer>
+            <Switch>
+              <Route exact path="/about"/>
+              <Route path="/" component={FooterContainer} />
+            </Switch>
+          </footer>
         </div>
       </Router>
     );
