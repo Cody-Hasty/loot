@@ -39,7 +39,7 @@ export default class GameForm extends React.Component {
         return (
             <div className="game-form-page">
                 <form onSubmit={this.handleSubmit} className="game-form">
-                    <h1 className="game-form-name">Create a New Game</h1>
+                    <h1>Create a New Game</h1>
                     <p> Title: </p>
                     <input type="text" placeholder="title" value={this.state.title} onChange={this.update("title")}/>
                     <p> Description: </p>

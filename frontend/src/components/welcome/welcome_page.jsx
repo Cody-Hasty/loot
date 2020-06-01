@@ -37,13 +37,13 @@ class WelcomePage extends React.Component {
             <div className="welcome-page">
                 {this.welcomeMessage()}
                 <NavLink to="/items">
-                    <button className="loot-button">Browse Our Loot!</button>
+                    <button>Browse Our Loot!</button>
                 </NavLink>
                 <NavLink to="/items/new">
-                    <button className="loot-button">Make Some Loot!</button>
+                    <button>Make Some Loot!</button>
                 </NavLink>
                 <NavLink to="/games">
-                    <button className="loot-button">Browse Games!</button>
+                    <button>Browse Games!</button>
                 </NavLink>
             </div>
         )
