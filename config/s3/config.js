@@ -18,7 +18,8 @@ const s3Client = new AWS.S3({
 const uploadParams = {
     Bucket: env.Bucket,
     Key: "",
-    Body: null
+    Body: null,
+    ACL: "public-read"
 };
 
 const s3 = {};

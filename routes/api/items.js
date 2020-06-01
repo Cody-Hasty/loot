@@ -9,16 +9,6 @@ const validateItemInput = require('../../validation/item_submit');
 // const awsController = require("../../controller/aws.controller");
 const upload = require("../../config/multer/config");
 
-
-
-
-
-
-// { game_id: req.params.game_id }
-
-// router.get("/test", (req, res) => res.json({ msg: "This is the items route" }));
-
-
 router.get('/', (req, res) => {
     Item.find()
         .sort({ name: 1 })
