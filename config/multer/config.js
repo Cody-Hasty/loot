@@ -6,7 +6,7 @@ const upload = multer({
         s3: s3.s3Client,
         bucket: s3.uploadParams.Bucket,
         key: function (req, file, cb) {
-            console.log(file);
+            // console.log(file);
             cb(null, file.originalname);
         }
     })
