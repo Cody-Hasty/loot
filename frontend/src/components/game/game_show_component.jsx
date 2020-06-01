@@ -9,7 +9,8 @@ class Game extends React.Component {
 
   render() {
     
-    const game = this.props.game 
+    const game = this.props.game;
+    // console.log(this.props);
     
     return (
       <div className="game-box">
