@@ -1,0 +1,38 @@
+.about-page h1 {
+    font-size: 25px;
+    font-weight: bold;
+    padding-top: 50px;
+    padding-bottom: 25px;
+}
+
+.about-page p {
+    width: 70%;
+    margin-left: 15%;
+}
+
+.about-page ul {
+    font-weight: bold;
+    color: gold;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    
+}
+
+.about-page li {
+    font-weight: normal;
+}
+
+.about-page li, .about-page ul {
+    width: 100%;
+    list-style: none;
+    text-align: center;
+}
+
+.about-page p, .about-page ul {
+    color: white;
+}
+
+.about-page a {
+    color: rgb(255, 234, 115);
+}
