@@ -7,7 +7,8 @@ class ItemForm extends React.Component{
             name: "",
             picture:"",
             description: "",
-            game_id: ""
+            game_id: "",
+            fromGameShow: this.props.fromGameShow
         };
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -33,15 +34,22 @@ class ItemForm extends React.Component{
     }
 
     render(){
-        // console.log(this.state)
+        let title
+        if (this.state.fromGameShow) {
+            title = this.props.gameParent
+        } else {
+            title = <><p>Game: </p>
+            <input type="text" placeholder="game title" value={this.state.game_id} onChange={this.handleChange("game_id")}/> </>
+        }
+
+        
         return(
             <div className="item-form-page">
                 <form onSubmit={this.handleSubmit} className="item-form">
                     <h3>Create a New Item</h3>
                     <p>Name: </p>
                     <input type="text" placeholder="name" value={this.state.name} onChange={this.handleChange("name")}/>
-                    <p>Game: </p>
-                    <input type="text" placeholder="game_id" value={this.state.game_id} onChange={this.handleChange("game_id")}/>
+                    {title}
                     <p>Description: </p>
                     <textarea type="text" placeholder="description" value={this.state.description} onChange={this.handleChange("description")}/>
                     <p>File: </p>
