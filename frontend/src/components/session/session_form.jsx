@@ -66,7 +66,7 @@ class SessionForm extends React.Component {
             </label>
         )
         
-        console.log(this);
+
         return (
             <div className="session-page">
                 {/* {this.renderErrors()} */}
