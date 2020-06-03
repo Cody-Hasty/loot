@@ -8,7 +8,7 @@ const mSTP = state => ({
 });
 
 const mDTP = dispatch => ({
-    createRecipe: recipe => dispatch(createRecipe(recipe))
+    createRecipe: (recipe) => dispatch(createRecipe(recipe))
 });
 
 export default connect(mSTP, mDTP)(RecipeForm);

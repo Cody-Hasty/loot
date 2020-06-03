@@ -1,5 +1,7 @@
 import React from "react";
 import ItemForm from "../item/item_form";
+import ItemFormContainer from "../item/item_form_container";
+
 // import Item from '../item/item_show_component';
 
 class Game extends React.Component {
@@ -20,7 +22,6 @@ class Game extends React.Component {
     
     const game = this.props.game 
     const {itemSubmit} = this.state;
-    
     switch(itemSubmit) {
       case false:
         return(
@@ -47,7 +48,7 @@ class Game extends React.Component {
           </>
         );
       case true:
-        return <ItemForm gameParent={ this.props.game.title } fromGameShow={ true } />
+        return <ItemFormContainer gameParent={ this.props.game.title } fromGameShow={ true } />
     };
 
   }

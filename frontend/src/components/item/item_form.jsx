@@ -9,10 +9,12 @@ class ItemForm extends React.Component{
             picture:"",
             description: "",
             game_id: "",
-            fromGameShow: this.props.fromGameShow
+            fromGameShow: this.props.fromGameShow,
+            recipes: []
         };
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+
     }
 
     handleSubmit(e){
@@ -35,6 +37,7 @@ class ItemForm extends React.Component{
     }
 
     render(){
+        console.log(this.props)
         let title
         if (this.state.fromGameShow) {
             title = ""
