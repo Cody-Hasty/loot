@@ -19,9 +19,12 @@ const ItemSchema = new Schema({
     game_id:{   
         type: mongoose.Schema.Types.ObjectId,
         ref: "Game"
-    }
-    //recipes?
-    
+    },
+    recipes: [ {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Recipe",
+        }
+    ]
 });
 
 Item = mongoose.model("Item", ItemSchema);
