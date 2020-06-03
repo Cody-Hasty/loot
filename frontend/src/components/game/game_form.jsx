@@ -36,6 +36,7 @@ export default class GameForm extends React.Component {
 
 
     render() {
+        console.log(this.props)
         return (
             <div className="game-form-page">
                 <form onSubmit={this.handleSubmit} className="game-form">

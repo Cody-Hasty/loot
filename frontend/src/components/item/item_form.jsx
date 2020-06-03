@@ -14,6 +14,7 @@ class ItemForm extends React.Component{
         };
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+
     }
 
     handleSubmit(e){
@@ -36,6 +37,7 @@ class ItemForm extends React.Component{
     }
 
     render(){
+        console.log(this.props)
         let title
         if (this.state.fromGameShow) {
             title = ""

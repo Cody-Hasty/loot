@@ -1,6 +1,7 @@
 import React from "react";
 import {Link} from "react-router-dom";
 import RecipeForm from "../recipe/recipe_form";
+import RecipeFormContainer from "../recipe/recipe_form_container";
 
 class ShowItem extends React.Component {
     constructor(props) {
@@ -8,6 +9,7 @@ class ShowItem extends React.Component {
         this.state = this.props.getItem(this.props.match.params.id);
         this.state["recipeSubmit"] = false;
         this.handleSubmitForm = this.handleSubmitForm.bind(this);
+       
       }
     
     
@@ -38,7 +40,7 @@ class ShowItem extends React.Component {
                     </>
                 );
             case true:
-                return <RecipeForm itemParent={this.props.item.name} />       
+                return <RecipeFormContainer itemParent={this.props.item.name} />       
         };
     }
 }

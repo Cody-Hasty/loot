@@ -17,7 +17,8 @@ class RecipeForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        this.props.createRecipe(this.state);
+        console.log(this.props)
+        // this.props.createRecipe(this.state);
         
     }
 
