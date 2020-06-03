@@ -8,6 +8,7 @@ const Item = require('../../models/Item');
 const validateItemInput = require('../../validation/item_submit');
 // const awsController = require("../../controller/aws.controller");
 const upload = require("../../config/multer/config");
+mongoose.set("useFindAndModify", false);
 
 router.get('/', (req, res) => {
     Item.find()
@@ -24,6 +25,49 @@ router.get('/:id', (req, res) => {
             res.status(404).json({ item: 'Item not found' })
         );
 });
+
+router.patch("/:id", (req, res)=>{
+    const { errors, isValid } = validateItemInput(req.body);
+
+    if (!isValid) {
+      return res.status(400).json(errors);
+    }
+    
+    Item.findByIdAndUpdate(
+      // the id of the item to find
+      req.params.id,
+
+      // the change to be made. Mongoose will smartly combine your existing
+      // document with this change, which allows for partial updates too
+      req.body,
+
+      // an option that asks mongoose to return the updated version
+      // of the document instead of the pre-updated one.
+      { new: true },
+
+      // the callback function
+      (err, item) => {
+        // Handle any possible database errors
+        if (err) return res.status(500).json(err);
+        return res.json(item);
+      }
+    );
+
+});
+
+
+router.delete("/:id", (req, res)=>{
+
+    Item.findByIdAndRemove(req.params.id, (err, item) => {
+      if (err) return res.status(500).json(err);
+      const response = {
+        message: "Item successfully deleted",
+        id: item._id,
+      };
+      return res.status(200).send(response);
+    });
+});
+
  
 router.post('/',
     upload.single("picture"),
