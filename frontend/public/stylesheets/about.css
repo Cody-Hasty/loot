@@ -16,7 +16,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    
+    margin-top: 10px;
 }
 
 .about-page li {
@@ -35,4 +35,9 @@
 
 .about-page a {
     color: rgb(255, 234, 115);
+}
+
+li img {
+    width: 132px;
+    height: 140px;
 }

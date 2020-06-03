@@ -12,16 +12,16 @@ class AboutPage extends React.Component {
                 </p>
                 <h1>The Team</h1>
                 <ul>
+                    <li><img src="../sprites/bri-sprite.png" alt="brittany"/></li>
+                    <li><img src="../sprites/iulia-sprite.png" alt="iulia"/></li>
+                    <li><img src="../sprites/eyal-sprite.png" alt="eyal"/></li>
+                    <li><img src="../sprites/dan-sprite.png" alt="daniel"/></li>
+                </ul>
+                <ul>
                     <ul>Brittany Hasty</ul>
                     <ul>Iulia Heinrich</ul>
                     <ul>Eyal Garbi</ul>
                     <ul>Daniel Lancaster</ul>
-                </ul>
-                <ul>
-                    <li>Team Lead: Idea, Design, CSS</li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
                 </ul>
                 <h1>The Mission</h1>
                 <p>If you've ever played a video game that is based on crafting 
