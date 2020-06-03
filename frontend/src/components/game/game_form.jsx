@@ -14,6 +14,25 @@ export default class GameForm extends React.Component {
 
         this.handleSubmit = this.handleSubmit.bind(this);
         this.update = this.update.bind(this);
+        this.renderErrors = this.renderErrors.bind(this);
+    }
+
+    renderErrors(){
+        const { errors } = this.props.state.errors.game;
+        if (errors) {
+            console.log(errors);
+            return(
+            //     <ul >
+            //        {errors.map((error, i) =>{
+            //            return <li key={i}>{error.title}</li>
+            //        })}
+            //    </ul>
+                <div>
+                    {errors.title}
+                </div>
+            )
+
+        }
     }
 
     handleSubmit(e) {
@@ -38,6 +57,9 @@ export default class GameForm extends React.Component {
     render() {
         return (
             <div className="game-form-page">
+                <div>
+                    {this.renderErrors()}
+                </div>
                 <form onSubmit={this.handleSubmit} className="game-form">
                     <h1>Create a New Game</h1>
                     <p> Title: </p>

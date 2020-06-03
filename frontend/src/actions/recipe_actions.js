@@ -43,3 +43,23 @@ export const getRecipes = () => dispatch => (
     .then((res) => dispatch(receiveRecipes(res.data)))
     .catch(err => dispatch(receiveErrors(err.response.data)))
 );
+
+export const updateRecipe = (recipe) => (dispatch) =>
+  APIutil.updateRecipe(recipe)
+    .then((res) => {
+      const recipe = res.data;
+      dispatch(receiveRecipe(recipe));
+    })
+    .catch((err) => {
+      return dispatch(receiveErrors(err.response.data));
+    });
+
+export const deleteRecipe = (recipeId) => (dispatch) =>
+  APIutil.deleteRecipe(recipeId)
+    .then((res) => {
+      const response = res.data;
+      dispatch(response);
+    })
+    .catch((err) => {
+      return dispatch(receiveErrors(err.response.data));
+    });

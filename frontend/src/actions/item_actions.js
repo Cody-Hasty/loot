@@ -58,4 +58,24 @@ export const getItems = () => dispatch =>(
         })
 );
 
+export const updateItem = (item) => (dispatch) =>
+  APIUtil.updateItem(item)
+    .then((res) => {
+      const item = res.data;
+      dispatch(receiveItem(item));
+    })
+    .catch((err) => {
+      return dispatch(receiveErrors(err.response.data));
+    });
+
+export const deleteItem = (itemId) => (dispatch) =>
+  APIUtil.deleteItem(itemId)
+    .then((res) => {
+      const response = res.data;
+      dispatch(response);
+    })
+    .catch((err) => {
+      return dispatch(receiveErrors(err.response.data));
+    });
+
 
