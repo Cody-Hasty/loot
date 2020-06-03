@@ -5,10 +5,12 @@ class RecipeForm extends React.Component {
         super(props);
         this.state = {
             label: '',
-            item: '',
+            item: this.props.itemParent,
             ingredients: '',
             picture: ''
         };
+
+        console.log(this.state.item)
 
         this.handleSubmit = this.handleSubmit.bind(this);
     }
@@ -36,24 +38,11 @@ class RecipeForm extends React.Component {
                             onChange={this.update('label')}
                         />
                     </label>
-                    <label>Item:
-                        <input
-                            type='text'
-                            value={this.state.label}
-                            onChange={this.update('item')}
-                        />
-                    </label>
+                    
                     <label>Ingredients:
                         <input
                             type='text'
-                            value={this.state.label}
-                            onChange={this.update('ingredients')}
-                        />
-                    </label>
-                    <label>Ingredients:
-                        <input
-                            type='text'
-                            value={this.state.label}
+                            value={this.state.ingredients}
                             onChange={this.update('ingredients')}
                         />
                     </label>

@@ -1,6 +1,6 @@
 import React from "react";
 import {Link} from "react-router-dom";
-import RecipeFrom from "../recipe/recipe_form"
+import RecipeForm from "../recipe/recipe_form";
 
 class ShowItem extends React.Component {
     constructor(props) {
@@ -38,7 +38,7 @@ class ShowItem extends React.Component {
                     </>
                 );
             case true:
-                return <RecipeFrom />       
+                return <RecipeForm itemParent={this.props.item.name} />       
         };
     }
 }
