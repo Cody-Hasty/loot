@@ -12,10 +12,10 @@ class AboutPage extends React.Component {
                 </p>
                 <h1>The Team</h1>
                 <ul>
-                    <li><img src="../sprites/bri-sprite.png" alt="brittany"/></li>
-                    <li><img src="../sprites/iulia-sprite.png" alt="iulia"/></li>
-                    <li><img src="../sprites/eyal-sprite.png" alt="eyal"/></li>
-                    <li><img src="../sprites/dan-sprite.png" alt="daniel"/></li>
+                    <li><a href="https://github.com/Brittany-Hasty"><img src="../sprites/bri-sprite.png" alt="brittany"/></a></li>
+                    <li><a href="https://github.com/Iulia-H"><img src="../sprites/iulia-sprite.png" alt="iulia"/></a></li>
+                    <li><a href="https://github.com/egarbi123"><img src="../sprites/eyal-sprite.png" alt="eyal"/></a></li>
+                    <li><a href="https://github.com/Dapper-Dan"><img src="../sprites/dan-sprite.png" alt="daniel"/></a></li>
                 </ul>
                 <ul>
                     <ul>Brittany Hasty</ul>
