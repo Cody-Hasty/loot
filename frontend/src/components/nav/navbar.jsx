@@ -9,8 +9,10 @@ class NavBar extends React.Component {
         }
     }
 
-    componentDidMount() {
-
+    refresh() {
+        // this.props.currentUser.id = null;
+        window.location.reload(false);
+    
     }
 
     getInButtons() {
@@ -34,6 +36,10 @@ class NavBar extends React.Component {
     logoutButton() {
         let buttonLogic = () => {
             this.props.logout();
+            console.log('in button logic'); //////////
+            this.setState(this.state);
+            this.refresh();
+            // this.props.currentUser.id = null;
         }
 
         if (this.props.currentUser.id) {
@@ -42,7 +48,7 @@ class NavBar extends React.Component {
                     <NavLink to="/">
                         <h1 className="website-title glow">LOOT</h1>
                     </NavLink>
-                    <button onClick={buttonLogic()} className="logout-button">Log Out</button>
+                    <button onClick={buttonLogic} className="logout-button">Log Out</button>
                 </div>
             )
         }
