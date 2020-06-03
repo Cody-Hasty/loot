@@ -1,5 +1,6 @@
 import React from "react";
 
+
 class ItemForm extends React.Component{
     constructor(props){
         super(props);
@@ -36,12 +37,11 @@ class ItemForm extends React.Component{
     render(){
         let title
         if (this.state.fromGameShow) {
-            title = this.props.gameParent
+            title = ""
         } else {
             title = <><p>Game: </p>
             <input type="text" placeholder="game title" value={this.state.game_id} onChange={this.handleChange("game_id")}/> </>
         }
-
         
         return(
             <div className="item-form-page">
