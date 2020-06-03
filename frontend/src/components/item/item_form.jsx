@@ -11,6 +11,7 @@ class ItemForm extends React.Component{
             game_id: "",
             fromGameShow: this.props.fromGameShow,
             recipes: []
+            
         };
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -37,10 +38,10 @@ class ItemForm extends React.Component{
     }
 
     render(){
-        console.log(this.props)
         let title
         if (this.state.fromGameShow) {
             title = ""
+            this.state.game_id = this.props.gameParent
         } else {
             title = <><p>Game: </p>
             <input type="text" placeholder="game title" value={this.state.game_id} onChange={this.handleChange("game_id")}/> </>

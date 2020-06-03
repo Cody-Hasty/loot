@@ -17,8 +17,7 @@ const ItemSchema = new Schema({
         default: Date.now
     },
     game_id:{   
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "Game"
+        type: String,
     },
     recipes: [ {
         type: mongoose.Schema.Types.ObjectId,
