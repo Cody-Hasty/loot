@@ -12,9 +12,8 @@ import axios from 'axios';
 export const createRecipe = (recipe) => {
   return axios({
       url: "/api/recipes",
-      method: "Post",
-      data: recipe,
-      headers: { 'content-type': 'application/x-www-form-urlencoded' }
+      method: "POST",
+      data: recipe
   });
 };
 

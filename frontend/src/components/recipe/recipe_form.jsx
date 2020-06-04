@@ -5,10 +5,15 @@ class RecipeForm extends React.Component {
         super(props);
         this.state = {
             label: '',
-            item: this.props.itemParent,
+            item: "this.props.itemParent",
             ingredients: '',
             picture: ''
+            
         };
+
+       
+
+       
 
         
 
@@ -27,12 +32,13 @@ class RecipeForm extends React.Component {
     }
 
     update(field) {
-        return e => this.setState({
+        return(e) => this.setState({
             [field]: e.currentTarget.value
         })
     }
 
     render() {
+        console.log(this.state)
         return (
             <div className="recipe-form-page">
                 <form onSubmit={this.handleSubmit} className="recipe-form">
