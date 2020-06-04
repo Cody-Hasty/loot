@@ -11,7 +11,6 @@ export default class GameForm extends React.Component {
             description: '',
             user_id: '',
         }
-
         this.handleSubmit = this.handleSubmit.bind(this);
         this.update = this.update.bind(this);
         this.renderErrors = this.renderErrors.bind(this);
