@@ -5,17 +5,21 @@ class RecipeForm extends React.Component {
         super(props);
         this.state = {
             label: '',
-            item: '',
+            item: this.props.itemParent,
             ingredients: '',
             picture: ''
         };
+
+        console.log(this.state.item)
+
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     handleSubmit(e) {
         e.preventDefault();
-        this.props.createRecipe(this.state);
-        // add action dispatch
+        console.log(this.props)
+        // this.props.createRecipe(this.state);
+        
     }
 
     update(field) {
@@ -27,33 +31,20 @@ class RecipeForm extends React.Component {
     render() {
         return (
             <div className="recipe-form-page">
-                <form onSubmit={this.handleSubmit()} className="recipe-form">
+                <form onSubmit={this.handleSubmit} className="recipe-form">
                     <label>Label:
                         <input 
                             type='text'
                             value={this.state.label}
-                            onChange={this.forceUpdate('label')}
+                            onChange={this.update('label')}
                         />
                     </label>
-                    <label>Item:
-                        <input
-                            type='text'
-                            value={this.state.label}
-                            onChange={this.forceUpdate('item')}
-                        />
-                    </label>
+                    
                     <label>Ingredients:
                         <input
                             type='text'
-                            value={this.state.label}
-                            onChange={this.forceUpdate('ingredients')}
-                        />
-                    </label>
-                    <label>Ingredients:
-                        <input
-                            type='text'
-                            value={this.state.label}
-                            onChange={this.forceUpdate('ingredients')}
+                            value={this.state.ingredients}
+                            onChange={this.update('ingredients')}
                         />
                     </label>
                     <label>Add photo:
@@ -61,9 +52,11 @@ class RecipeForm extends React.Component {
                             type="file" 
                             name="Add File" 
                             value={this.state.pictures} 
-                            onChange={this.handleChange('pictures')} 
+                            onChange={this.update('pictures')} 
                         />
                     </label>
+
+                    <button type="submit"> Submit </button>
                 </form>
             </div>
         )

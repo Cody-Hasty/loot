@@ -10,9 +10,11 @@ class ItemForm extends React.Component{
             game_id: "",
             fromGameShow: this.props.fromGameShow,
             games: [],
+            recipes: []
         };
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+
     }
 
     componentDidMount() {
@@ -48,6 +50,7 @@ class ItemForm extends React.Component{
         let titleForm;
         if (this.state.fromGameShow) {
             titleForm = "";
+            this.state.game_id = this.props.gameParent
         } else {
             titleForm = <><p>Game: </p>
                 <select name="title" id="title" onChange={this.handleChange("game_id")}>

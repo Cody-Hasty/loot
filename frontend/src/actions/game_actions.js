@@ -47,7 +47,7 @@ export const getGame = (gameId) => dispatch =>(
 );
 
 
-export const getGames = () => (dispatch) =>
+export const getGames = () => (dispatch) =>(
     APIUtil.getGames()
         .then((res) => {
             const games = res.data;
@@ -55,4 +55,27 @@ export const getGames = () => (dispatch) =>
         })
         .catch((err) => {
             return dispatch(receiveErrors(err.response.data));
-        });
+        })
+);
+
+export const updateGame = (game) => (dispatch)=>(
+    APIUtil.updateGame(game)
+        .then((res) =>{
+            const game = res.data;
+            dispatch(receiveGame(game));
+        })
+        .catch(err =>{
+            return dispatch(removeErrors(err.response.data));
+        })
+);
+
+export const deleteGame = gameId => dispatch =>(
+    APIUtil.deleteGame(gameId)
+        .then(res =>{
+            const response = res.data;
+            dispatch(response);
+        })
+        .catch(err => {
+            return dispatch(receiveErrors(err.response.data));
+        })
+);

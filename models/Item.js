@@ -17,11 +17,13 @@ const ItemSchema = new Schema({
         default: Date.now
     },
     game_id:{   
+        type: String,
+    },
+    recipes: [ {
         type: mongoose.Schema.Types.ObjectId,
-        ref: "Game"
-    }
-    //recipes?
-    
+        ref: "Recipe",
+        }
+    ]
 });
 
 Item = mongoose.model("Item", ItemSchema);
