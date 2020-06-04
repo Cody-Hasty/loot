@@ -1,6 +1,5 @@
 import React from "react";
 
-
 class ItemForm extends React.Component{
     constructor(props){
         super(props);
@@ -9,10 +8,22 @@ class ItemForm extends React.Component{
             picture:"",
             description: "",
             game_id: "",
-            fromGameShow: this.props.fromGameShow
+            fromGameShow: this.props.fromGameShow,
+            games: [],
         };
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+    }
+
+    componentDidMount() {
+        if (!this.state.fromGameShow){
+            this.props.getGames().then(() => {
+                this.setState({
+                    games: this.props.state.entities.games,
+                    game_id: this.props.state.entities.games[0]._id,
+                });
+            });
+        }
     }
 
     handleSubmit(e){
@@ -23,7 +34,6 @@ class ItemForm extends React.Component{
         formData.append("game_id", this.state.game_id);
         formData.append("picture", this.state.picture);
         this.props.createItem(formData);
-
     }
 
     handleChange(field){
@@ -35,12 +45,19 @@ class ItemForm extends React.Component{
     }
 
     render(){
-        let title
+        let titleForm;
         if (this.state.fromGameShow) {
-            title = ""
+            titleForm = "";
         } else {
-            title = <><p>Game: </p>
-            <input type="text" placeholder="game title" value={this.state.game_id} onChange={this.handleChange("game_id")}/> </>
+            titleForm = <><p>Game: </p>
+                <select name="title" id="title" onChange={this.handleChange("game_id")}>
+                    {this.state.games.map((game) => (
+                        <option key={game._id} value={game._id}>
+                            {game.title}
+                        </option>
+                    ))}
+                </select>
+            </>
         }
         
         return(
@@ -49,7 +66,7 @@ class ItemForm extends React.Component{
                     <h3>Create a New Item</h3>
                     <p>Name: </p>
                     <input type="text" placeholder="name" value={this.state.name} onChange={this.handleChange("name")}/>
-                    {title}
+                    {titleForm}
                     <p>Description: </p>
                     <textarea type="text" placeholder="description" value={this.state.description} onChange={this.handleChange("description")}/>
                     <p>File: </p>

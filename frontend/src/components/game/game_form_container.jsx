@@ -3,7 +3,7 @@ import { createGame } from '../../actions/game_actions';
 import GameForm from "./game_form";
 
 const mSTP = state => ({
-    state: state
+    state: state,
 });
 
 const mDTP = dispatch => ({
