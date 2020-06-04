@@ -1,12 +1,25 @@
 import axios from 'axios';
 
-export const createRecipe = (recipe) => (
-    axios.post({
-        url: "/api/recipes/",
-        method: "POST",
-        data: recipe,
-    })
-);
+// export const createRecipe = (recipe) => (
+//     axios.post({
+//         url: "/api/recipes/",
+//         method: "Post",
+//         data: recipe,
+//         headers: { 'content-type': 'application/x-www-form-urlencoded' }
+//     })
+// );
+
+export const createRecipe = (recipe) => {
+  return axios({
+      url: "/api/recipes",
+      method: "Post",
+      data: recipe,
+      headers: { 'content-type': 'application/x-www-form-urlencoded' }
+  });
+};
+
+
+
 export const getRecipe = (recipeId) => (axios.get(`/api/recipes/${recipeId}/`));
 export const getRecipes = () => (axios.get('/api/recipes/'));
 
@@ -15,6 +28,7 @@ export const updateRecipe = (recipe) =>
     url: `/api/recipes/${recipe.id}`,
     method: "Patch",
     data: recipe,
+    
   });
 
 const updateRecipeII = (formData) => {

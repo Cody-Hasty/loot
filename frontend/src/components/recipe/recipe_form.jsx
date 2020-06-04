@@ -10,16 +10,20 @@ class RecipeForm extends React.Component {
             picture: ''
         };
 
-        console.log(this.state.item)
+        
 
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.update = this.update.bind(this)
     }
 
     handleSubmit(e) {
         e.preventDefault();
-        console.log(this.props)
-        // this.props.createRecipe(this.state);
+        this.props.createRecipe(this.state);
         
+    }
+
+    handleFile(e){
+        this.setState({picture: e.currentTarget.files[0]});
     }
 
     update(field) {
@@ -32,6 +36,8 @@ class RecipeForm extends React.Component {
         return (
             <div className="recipe-form-page">
                 <form onSubmit={this.handleSubmit} className="recipe-form">
+                    <br></br>
+                    <br></br>
                     <label>Label:
                         <input 
                             type='text'
@@ -39,7 +45,6 @@ class RecipeForm extends React.Component {
                             onChange={this.update('label')}
                         />
                     </label>
-                    
                     <label>Ingredients:
                         <input
                             type='text'
@@ -51,8 +56,7 @@ class RecipeForm extends React.Component {
                         <input 
                             type="file" 
                             name="Add File" 
-                            value={this.state.pictures} 
-                            onChange={this.update('pictures')} 
+                            onChange={this.handleFile.bind(this)} 
                         />
                     </label>
 

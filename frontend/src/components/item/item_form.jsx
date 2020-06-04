@@ -48,7 +48,7 @@ class ItemForm extends React.Component{
             )
 
         }
-    }
+    } 
 
     handleSubmit(e){
         e.preventDefault();
@@ -72,6 +72,7 @@ class ItemForm extends React.Component{
         let titleForm;
         if (this.state.fromGameShow) {
             titleForm = "";
+            
             this.state.game_id = this.props.gameParent
         } else {
             titleForm = <><p>Game: </p>
