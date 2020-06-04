@@ -30,14 +30,9 @@ class SessionForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        let user = {
-            username: this.state.username,
-            email: this.state.email,
-            password: this.state.password,
-            password2: this.state.password2
-        }
+        let user = this.state;
         this.props.action(user)
-            .then(() => this.props.history.push('/#/'))
+            .then((res) => {console.log("res", res); return this.props.history.push('/#/')})
     }
 
     render() {
