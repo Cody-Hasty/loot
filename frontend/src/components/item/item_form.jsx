@@ -14,6 +14,7 @@ class ItemForm extends React.Component{
         };
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.renderErrors = this.renderErrors.bind(this);
 
     }
 
@@ -25,6 +26,27 @@ class ItemForm extends React.Component{
                     game_id: this.props.state.entities.games[0]._id,
                 });
             });
+        }
+    }
+    componentWillUnmount(){
+        this.props.removeErrors();
+    }
+
+    renderErrors() {
+        const errors  = Object.values(this.props.state.errors.item);
+        if (errors) {
+            console.log(errors);
+            return (
+                <ul >
+                    {errors.map((error, i) =>{
+                        return <li key={i}>{error.name}</li>
+                    })}
+                </ul>
+                // <div>
+                //     {/* {errors.name} */}
+                // </div>
+            )
+
         }
     }
 
@@ -65,6 +87,7 @@ class ItemForm extends React.Component{
         
         return(
             <div className="item-form-page">
+                {this.renderErrors()}
                 <form onSubmit={this.handleSubmit} className="item-form">
                     <h3>Create a New Item</h3>
                     <p>Name: </p>

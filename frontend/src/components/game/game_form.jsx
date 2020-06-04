@@ -10,25 +10,28 @@ export default class GameForm extends React.Component {
             items: [],
             description: '',
             user_id: '',
-        }
+        };
         this.handleSubmit = this.handleSubmit.bind(this);
         this.update = this.update.bind(this);
         this.renderErrors = this.renderErrors.bind(this);
     }
+    componentWillUnmount() {
+        this.props.removeErrors();
+    }
 
     renderErrors(){
-        const { errors } = this.props.state.errors.game;
+        const errors = Object.values(this.props.state.errors.game);
         if (errors) {
             console.log(errors);
             return(
-            //     <ul >
-            //        {errors.map((error, i) =>{
-            //            return <li key={i}>{error.title}</li>
-            //        })}
-            //    </ul>
-                <div>
-                    {errors.title}
-                </div>
+                <ul >
+                   {errors.map((error, i) =>{
+                       return <li key={i}>{error.title}</li>
+                   })}
+               </ul>
+                // <div>
+                //     {errors.title}
+                // </div>
             )
 
         }
