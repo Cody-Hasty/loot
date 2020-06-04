@@ -6,19 +6,29 @@ const RecipeSchema = new Schema({
         type: String,
         required: true,
     },
+
     item: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "Item",
+        type: String
     },
-    ingredients: [{
-        amount: "",
-        ingredient: {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: "",
-        },
-    }, ],
+    
+    //{
+    //     type: mongoose.Schema.Types.ObjectId,
+    //     ref: "Item",
+   
+    ingredients: {
+        type: String
+    },
+    
+    
+    //[{
+    //     amount: "",
+    //     ingredient: {
+    //         type: mongoose.Schema.Types.ObjectId,
+    //         ref: "",
+    //     },
+    // }],
     picture: {
-        type: String,
+        type: Object,
     },
     date: {
         type: Date,
