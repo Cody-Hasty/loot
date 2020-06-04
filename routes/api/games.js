@@ -7,6 +7,7 @@ const mongoose = require('mongoose');
 const upload = require("../../config/multer/config");
 mongoose.set("useFindAndModify", false);
 
+
 //GAMES INDEX ROUTE
 router.get('/', (req, res) => {
     Game.find()
@@ -27,12 +28,16 @@ router.post('/', upload.single("picture"),
     if (!isValid) {
         return res.status(400).json(errors);
     }
+    let image;
+    if (req.file){
+      image = req.file.location;
+    }
 
     const newGame = new Game({
         title: req.body.title,
         description: req.body.description,
         // user_id: req.user.id,
-        picture: req.file.location
+        picture: image
     });
 
     newGame.save()
