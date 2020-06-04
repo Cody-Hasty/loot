@@ -35,11 +35,15 @@ router.post('/',
             return res.status(400).json(errors);
         }
 
+        let image;
+        if (req.file) {
+            image = req.file.location;
+        }
         
         const newItem = new Item({
             name: req.body.name,
             description: req.body.description,
-            picture: req.file.location,
+            picture: image,
             // game_id: gameId
             game_id: req.body.game_id
         });

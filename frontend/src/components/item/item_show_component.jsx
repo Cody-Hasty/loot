@@ -2,7 +2,7 @@ import React from "react";
 import {Link} from "react-router-dom";
 import RecipeForm from "../recipe/recipe_form";
 import RecipeFormContainer from "../recipe/recipe_form_container";
-
+import image from "../../assets/angery.jpeg";
 class ShowItem extends React.Component {
     constructor(props) {
         super(props);
@@ -30,7 +30,7 @@ class ShowItem extends React.Component {
                     <div className="item-show">
                         <h1>{item.name}</h1>
                         <hr/>
-                        <img src={item.picture}/>
+                            {item.picture ? <img src={item.picture} /> : <img src={image} /> }
                         <p>{item.description}</p>
                     </div>
 

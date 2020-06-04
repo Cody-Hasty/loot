@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+import image from "../../assets/angery.jpeg"
 class Item extends React.Component{
     constructor(props){
         super(props);
@@ -16,7 +16,7 @@ class Item extends React.Component{
               {item.picture ? (
                 <img src={item.picture}/>
                 ) : (
-                ""
+                  <img src={image} /> 
               )}
             </Link>
           </div>

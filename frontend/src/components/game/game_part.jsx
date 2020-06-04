@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import image from "../../assets/angery.jpeg";
 
 class Game extends React.Component {
   constructor(props) {
@@ -13,7 +14,7 @@ class Game extends React.Component {
         {/* <h1>{game.title}</h1> */}
         <Link to={`/games/${game._id}`}>
           <h1>{game.title}</h1>
-          {game.picture ? <img src={game.picture} /> : "This game had no picture"}
+          {game.picture ? <img src={game.picture} /> : <img src={image}/>}
         </Link> 
       </div>
     );
