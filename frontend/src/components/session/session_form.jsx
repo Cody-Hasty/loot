@@ -32,7 +32,35 @@ class SessionForm extends React.Component {
         e.preventDefault();
         let user = this.state;
         this.props.action(user)
-            .then((res) => {console.log("res", res); return this.props.history.push('/#/')})
+            .then((res = {}) => { 
+                if (!res.errors) {
+                    return this.props.history.push('/#/')
+                } else {
+                    this.resetForm();
+                }  
+            })
+    }
+
+    renderErrors() {
+        const errors  = Object.values(this.props.errors);
+        if (errors) {
+            console.log(errors);
+            return (
+                <ul >
+                    {errors.map((error, i) =>{
+                        return <li key={i}>{error.email} {error.password}</li>
+                    })}
+                </ul>
+                // <div>
+                //     {/* {errors.title} */}
+                // </div>
+            )
+
+        }
+    }
+
+    componentWillUnmount() {
+        this.props.removeErrors();
     }
 
     render() {
@@ -62,7 +90,7 @@ class SessionForm extends React.Component {
 
         return (
             <div className="session-page">
-                {/* {this.renderErrors()} */}
+                {this.renderErrors()}
                 <form onSubmit={this.handleSubmit} className="session-form">
                     <h3>{this.props.formType}</h3>
                     {this.props.formType === 'signup' ? userName : null}
