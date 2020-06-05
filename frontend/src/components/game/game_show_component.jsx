@@ -1,7 +1,7 @@
 import React from "react";
 import ItemForm from "../item/item_form";
 import ItemFormContainer from "../item/item_form_container";
-
+import image from "../../assets/angery.jpeg"
 // import Item from '../item/item_show_component';
 
 class Game extends React.Component {
@@ -27,7 +27,7 @@ class Game extends React.Component {
         return(
           <>
           <div className="game-box">
-            { game.picture ? <img src={game.picture} /> : <p>Game picture not found</p> }
+              {game.picture ? <img src={game.picture} /> : <img src={image} /> }
             <h1> {game.title} </h1>
             <p> Description: { game.description } </p>
               {/* <ul>

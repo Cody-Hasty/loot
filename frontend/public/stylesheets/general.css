@@ -2,7 +2,7 @@ html {
     height: 100%;
     display: block;
     min-height: fit-content;
-    overflow: auto;
+    /* overflow: auto; */
 }
 
 body {
@@ -97,4 +97,12 @@ button, .loot-button {
 button:hover, .loot-button:hover {
     background-image: linear-gradient(to top right, gold, white);
     cursor: pointer;
+}
+
+::placeholder {
+    color: rgb(73, 72, 72);
+}
+
+input:focus {
+    border: 3px solid gold;
 }

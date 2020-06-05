@@ -4,8 +4,7 @@ export const createGame = (formData) => {
     return axios({
         url: "/api/games",
         method: "Post",
-        data: formData,
-        headers: { 'content-type': 'application/x-www-form-urlencoded' }
+        data: formData
     });
 };
 
