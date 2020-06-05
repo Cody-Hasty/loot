@@ -1,3 +1,50 @@
 .recipe-form-page {
-    
+    padding-top: 50px;
+}
+
+.recipe-form-page h3 {
+    text-transform: capitalize;
+    font-size: x-large;
+    padding-bottom: 50px;
+}
+
+.recipe-form-page form {
+    border: 1px solid gold;
+    background-color: rgb(26, 26, 26);
+    padding: 25px 25px 25px 25px;
+    width: 500px;
+    height: 500px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.recipe-form-page p {
+    display: flex;
+    float: left;
+    padding-bottom: 8px;
+    padding-top: 8px;
+    width: 100px;
+}
+
+.recipe-form-page input {
+    display: flex;
+    float: right;
+    padding: 8px 8px 8px 8px;
+}
+
+.recipe-form-page button {
+    width: 100px;
+    align-self: center;
+    color: black;
+    font-weight: bold;
+    background-color: gold;
+    height: 40px;
+    font-size: 15px;
+    margin-top: 50px;
+}
+
+.recipe-form-page button:hover {
+    background-image: linear-gradient(to top right, gold, white);
+    cursor: pointer;
 }
