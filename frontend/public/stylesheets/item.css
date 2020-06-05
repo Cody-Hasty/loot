@@ -37,7 +37,7 @@
     padding: 8px 8px 8px 8px;
 }
 
-select:hover {
+.item-form select:hover {
     background-color: gold;
 }
 
@@ -46,13 +46,7 @@ select:hover {
     resize: none;
 }
 
-::placeholder {
-    color: rgb(73, 72, 72);
-}
 
-input:focus {
-    border: 3px solid gold;
-}
 
 .item-form button {
     width: 100px;

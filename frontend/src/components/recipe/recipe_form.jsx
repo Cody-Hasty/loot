@@ -32,29 +32,26 @@ class RecipeForm extends React.Component {
         return (
             <div className="recipe-form-page">
                 <form onSubmit={this.handleSubmit} className="recipe-form">
-                    <label>Label:
-                        <input 
-                            type='text'
-                            value={this.state.label}
-                            onChange={this.update('label')}
-                        />
-                    </label>
-                    
-                    <label>Ingredients:
-                        <input
-                            type='text'
-                            value={this.state.ingredients}
-                            onChange={this.update('ingredients')}
-                        />
-                    </label>
-                    <label>Add photo:
-                        <input 
-                            type="file" 
-                            name="Add File" 
-                            value={this.state.pictures} 
-                            onChange={this.update('pictures')} 
-                        />
-                    </label>
+                    <h3>Create a New Recipe</h3>
+                    <p>Label:</p>                    
+                    <input 
+                        type='text'
+                        value={this.state.label}
+                        onChange={this.update('label')}
+                    />
+                    <p>Ingredients:</p>
+                    <input
+                        type='text'
+                        value={this.state.ingredients}
+                        onChange={this.update('ingredients')}
+                    />
+                    <p>Add photo:</p>
+                    <input 
+                        type="file" 
+                        name="Add File" 
+                        value={this.state.pictures} 
+                        onChange={this.update('pictures')} 
+                    />
 
                     <button type="submit"> Submit </button>
                 </form>
