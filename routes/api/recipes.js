@@ -4,6 +4,7 @@ const validateRecipeInput = require('../../validation/recipe_submit');
 const passport = require('passport');
 const Recipe = require('../../models/Recipe');
 const mongoose = require('mongoose');
+const upload = require("../../config/multer/config");
 mongoose.set("useFindAndModify", false);
 
 
@@ -18,7 +19,7 @@ router.get('/', (req, res) => {
 });
 
 //RECIPE POST
-router.post('/', passport.authenticate('jwt', { session: false }), (req, res) => {
+router.post('/', upload.single("picture"), passport.authenticate('jwt', { session: false }), (req, res) => {
     const { errors, isValid } = validateRecipeInput(req.body);
 
     if (!isValid) {
@@ -26,12 +27,13 @@ router.post('/', passport.authenticate('jwt', { session: false }), (req, res) =>
     }
 
     const newRecipe = new Recipe({
-        label: req.body.label
+        label: req.body.label,
+        ingredients: req.body.ingredients
 
     });
 
     newRecipe.save()
-        .then(recipe => recipe);
+        .then(recipe => res.json(recipe));
 
 });
 
