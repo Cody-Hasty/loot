@@ -36,7 +36,7 @@ router.post('/', upload.single("picture"),
     const newGame = new Game({
         title: req.body.title,
         description: req.body.description,
-        // user_id: req.user.id,
+        user_id: req.body.user_id,
         picture: image
     });
 

@@ -26,8 +26,7 @@ const GameSchema = new Schema({
         type: Object,
     },
     user_id: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "User",
+        type: String
     },
     date: {
         type: Date,

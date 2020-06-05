@@ -9,7 +9,7 @@ export default class GameForm extends React.Component {
             recipes: [],
             items: [],
             description: '',
-            user_id: '',
+            user_id: ''
         };
         this.handleSubmit = this.handleSubmit.bind(this);
         this.update = this.update.bind(this);
@@ -42,7 +42,7 @@ export default class GameForm extends React.Component {
         const formData = new FormData();
         formData.append("title", this.state.title);
         formData.append("description", this.state.description);
-        formData.append("user_id", this.state.user_id);
+        formData.append("user_id", this.props.state.session.user.username);
         formData.append("picture", this.state.picture);
         this.props.createGame(formData);
     }
@@ -57,7 +57,7 @@ export default class GameForm extends React.Component {
 
 
     render() {
-        console.log(this.props)
+        console.log(this.props.state.session.user.username)
         return (
             <div className="game-form-page">
                 <div>
