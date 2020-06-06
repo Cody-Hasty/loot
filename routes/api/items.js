@@ -8,6 +8,7 @@ const Item = require('../../models/Item');
 const validateItemInput = require('../../validation/item_submit');
 // const awsController = require("../../controller/aws.controller");
 const upload = require("../../config/multer/config");
+mongoose.set("useFindAndModify", false);
 
 router.get('/', (req, res) => {
     Item.find()
@@ -51,6 +52,37 @@ router.post('/',
         newItem.save().then(item => res.json(item));
     }
 );
+
+//Item update
+router.patch("/:id", (req, res) => {
+    const { errors, isValid } = validateItemInput(req.body);
+
+    if (!isValid) {
+        return res.status(400).json(errors);
+    }
+
+    Item.findByIdAndUpdate(
+        req.params.id,
+        req.body,
+        { new: true },
+        (err, item) => {
+            if (err) return res.status(500).json(err);
+            return res.json(item);
+        }
+    );
+});
+
+//Item delete
+router.delete("/:id", (req, res) => {
+    Item.findByIdAndRemove(req.params.id, (err, item) => {
+        if (err) return res.status(500).json(err);
+        const response = {
+            message: "Item successfully deleted",
+            id: item._id,
+        };
+        return res.status(200).send(response);
+    });
+});
 
 
 
