@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import image from "../../assets/angery.jpeg";
 
+
 class Game extends React.Component {
   constructor(props) {
     super(props);

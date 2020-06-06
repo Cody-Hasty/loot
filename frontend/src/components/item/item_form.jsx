@@ -19,12 +19,14 @@ class ItemForm extends React.Component{
     }
 
     componentDidMount() {
+        
         if (!this.state.fromGameShow){
             this.props.getGames().then(() => {
                 this.setState({
                     games: this.props.state.entities.games,
                     game_id: this.props.state.entities.games[0]._id,
                 });
+                // this.props.state.entities.games.items.push(this)
             });
         }
     }
@@ -35,7 +37,7 @@ class ItemForm extends React.Component{
     renderErrors() {
         const errors  = Object.values(this.props.state.errors.item);
         if (errors) {
-            console.log(errors);
+           
             return (
                 <ul >
                     {errors.map((error, i) =>{
@@ -57,7 +59,7 @@ class ItemForm extends React.Component{
         formData.append("description", this.state.description);
         formData.append("game_id", this.state.game_id);
         formData.append("picture", this.state.picture);
-        this.props.createItem(formData);
+        let item = this.props.createItem(formData);
     }
 
     handleChange(field){
@@ -69,11 +71,11 @@ class ItemForm extends React.Component{
     }
 
     render(){
+        
         let titleForm;
         if (this.state.fromGameShow) {
             titleForm = "";
-            
-            this.state.game_id = this.props.gameParent
+            this.state.game_id = this.props.gameParentID
         } else {
             titleForm = <><p>Game: </p>
                 <select name="title" id="title" onChange={this.handleChange("game_id")}>

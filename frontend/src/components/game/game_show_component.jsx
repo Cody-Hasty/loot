@@ -2,7 +2,8 @@ import React from "react";
 import ItemForm from "../item/item_form";
 import ItemFormContainer from "../item/item_form_container";
 import image from "../../assets/angery.jpeg"
-// import Item from '../item/item_show_component';
+
+
 
 class Game extends React.Component {
   constructor(props) {
@@ -10,6 +11,7 @@ class Game extends React.Component {
     this.state = this.props.getGame(this.props.match.params.id);
     this.state["itemSubmit"] = false;
     this.handleSubmitForm = this.handleSubmitForm.bind(this);
+    // this.componentDidMount = this.componentDidMount.bind(this)
   }
 
 
@@ -18,9 +20,25 @@ class Game extends React.Component {
     
   }
 
+  componentDidMount() {
+    this.props.getItems().then(() => {
+      const game = this.props.state.entities.games
+      const items = this.props.state.entities.items
+      if (items) {
+        for (let key in items) {
+          if (items[key].game_id === game._id) game.items.push(items[key])
+        }
+      }
+    })
+  }
+
+
+
+
   render() {
+   
     
-    const game = this.props.game 
+    const game = this.props.state.entities.games 
     const {itemSubmit} = this.state;
     switch(itemSubmit) {
       case false:
@@ -48,7 +66,7 @@ class Game extends React.Component {
           </>
         );
       case true:
-        return <ItemFormContainer gameParent={ this.props.game.title } fromGameShow={ true } />
+        return <ItemFormContainer gameParent={ game.title } gameParentID={ game._id} fromGameShow={ true } />
     };
 
   }
