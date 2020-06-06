@@ -25,7 +25,7 @@ class Game extends React.Component {
     this.props.getItems().then(() => {
       const game = this.props.state.entities.games
       const items = this.props.state.entities.items
-      if (items) {
+      if (items && game.items) {
         for (let key in items) {
           if (items[key].game_id === game._id) game.items.push(items[key])
         }
@@ -60,8 +60,9 @@ class Game extends React.Component {
               {game.picture ? <img src={game.picture} /> : <img src={image} /> }
             <h1> {game.title} </h1>
             <p> Description: { game.description } </p>
-            
+            <br></br>
             {gameList}
+            <br></br>
 
           <footer><p>Page started by: { game.user_id } on { game.date } </p></footer>
           </div>
