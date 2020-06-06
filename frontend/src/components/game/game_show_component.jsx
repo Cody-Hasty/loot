@@ -2,6 +2,7 @@ import React from "react";
 import ItemForm from "../item/item_form";
 import ItemFormContainer from "../item/item_form_container";
 import image from "../../assets/angery.jpeg"
+import Item from "../item/item_part"
 
 
 
@@ -11,7 +12,7 @@ class Game extends React.Component {
     this.state = this.props.getGame(this.props.match.params.id);
     this.state["itemSubmit"] = false;
     this.handleSubmitForm = this.handleSubmitForm.bind(this);
-    // this.componentDidMount = this.componentDidMount.bind(this)
+    this.fillItems()
   }
 
 
@@ -20,7 +21,7 @@ class Game extends React.Component {
     
   }
 
-  componentDidMount() {
+  fillItems() {
     this.props.getItems().then(() => {
       const game = this.props.state.entities.games
       const items = this.props.state.entities.items
@@ -36,10 +37,21 @@ class Game extends React.Component {
 
 
   render() {
-   
-    
     const game = this.props.state.entities.games 
     const {itemSubmit} = this.state;
+    let gameList;
+    if (game.items) {
+      gameList = <ul>
+                   {game.items.map((item) => (
+                     <li key={item._id}>
+                       <Item item={item} />
+                     </li>
+                   ))} 
+                 </ul>
+    } else {
+      gameList = ""
+    }
+    
     switch(itemSubmit) {
       case false:
         return(
@@ -48,13 +60,9 @@ class Game extends React.Component {
               {game.picture ? <img src={game.picture} /> : <img src={image} /> }
             <h1> {game.title} </h1>
             <p> Description: { game.description } </p>
-              {/* <ul>
-            {game.items.map((item) => (
-              <li key={item._id}>
-                  <Item item={item} />
-              </li>
-            ))}
-             </ul> */}
+            
+            {gameList}
+
           <footer><p>Page started by: { game.user_id } on { game.date } </p></footer>
           </div>
              
