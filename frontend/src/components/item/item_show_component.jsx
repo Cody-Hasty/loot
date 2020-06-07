@@ -9,14 +9,21 @@ class ShowItem extends React.Component {
         this.state = this.props.getItem(this.props.match.params.id);
         this.state["recipeSubmit"] = false;
         this.handleSubmitForm = this.handleSubmitForm.bind(this);
+        this.handleClick = this.handleClick.bind(this);
        
-      }
+    }
     
     
-      handleSubmitForm() {
+    handleSubmitForm() {
         this.setState({["recipeSubmit"]: true})
         
-      }
+    }
+
+    handleClick(e){
+        e.preventDefault();
+        this.props.deleteItem(this.props.item._id);
+    }
+
     
 
     render(){
@@ -32,6 +39,7 @@ class ShowItem extends React.Component {
                         <hr/>
                             {item.picture ? <img src={item.picture} /> : <img src={image} /> }
                         <p>{item.description}</p>
+                        <button onClick={this.handleClick}>delete me</button>
                     </div>
 
                     <div className="recipe-submit">

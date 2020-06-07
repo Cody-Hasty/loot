@@ -35,7 +35,7 @@ const updateItemII = (formData) => {
 };
 
 export const deleteItem = (itemId) => {
-  axios.delete({
+  return axios.delete({
     url: `/api/items/${itemId}`,
     method: "Delete",
     data: itemId,
