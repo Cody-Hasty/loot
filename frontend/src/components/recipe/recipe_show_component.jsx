@@ -8,14 +8,15 @@ class ShowRecipe extends React.Component {
 
     render() {
         const recipe = this.props.recipe
+       
         return (
-            <div>
+            <div className="recipe-show">
                 <h1>{recipe.label}</h1>
                 <img src={recipe.picture}/>
-                <ul>
-                    {recipe.ingredients.map(ingredient => (
-                        <li>{ingredient}</li>
-                    ))}
+                <h2> Ingredients: </h2>
+                <ul> 
+                    <li>{recipe.ingredients} </li>
+                    <li>hi</li>
                 </ul>
             </div>
         )
