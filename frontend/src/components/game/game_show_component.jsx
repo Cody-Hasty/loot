@@ -13,6 +13,7 @@ class Game extends React.Component {
     this.state["itemSubmit"] = false;
     this.handleSubmitForm = this.handleSubmitForm.bind(this);
     this.fillItems()
+    this.fillItems = this.fillItems.bind(this)
   }
 
 
@@ -22,14 +23,16 @@ class Game extends React.Component {
   }
 
   fillItems() {
+    let result = []
     this.props.getItems().then(() => {
       const game = this.props.state.entities.games
       const items = this.props.state.entities.items
       if (items && game.items) {
         for (let key in items) {
-          if (items[key].game_id === game._id) game.items.push(items[key])
+          if (items[key].game_id === game._id) result.push(items[key])
         }
       }
+      this.setState({["items"]: result })
     })
   }
 
@@ -37,17 +40,20 @@ class Game extends React.Component {
 
 
   render() {
-    const game = this.props.state.entities.games 
+    console.log(this.state)
     const {itemSubmit} = this.state;
+    const game = this.props.state.entities.games 
+    const items = this.state.items
+    
     let gameList;
-    if (game.items) {
-      gameList = <ul>
-                   {game.items.map((item) => (
-                     <li key={item._id}>
+    if (items) {
+     gameList = <ul>
+                    {items.map((item) => 
+                     <li key={item._id} className="item-box">
                        <Item item={item} />
                      </li>
-                   ))} 
-                 </ul>
+                   )} 
+                </ul>
     } else {
       gameList = ""
     }
@@ -57,7 +63,7 @@ class Game extends React.Component {
         return(
           <>
           <div className="game-box">
-              {game.picture ? <img src={game.picture} /> : <img src={image} /> }
+            {game.picture ? <img src={game.picture} /> : <img src={image} /> }
             <h1> {game.title} </h1>
             <p> Description: { game.description } </p>
             <br></br>

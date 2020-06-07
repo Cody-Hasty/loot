@@ -10,7 +10,7 @@ class Games extends React.Component {
 
   render() {
     const games = Object.values(this.props.games);
-    // console.log(games);
+    console.log(games);
     return (
       <div className="game-list">
         <ul>
