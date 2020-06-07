@@ -4,11 +4,11 @@ import { Link } from 'react-router-dom';
 class Recipe extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {};
     }
 
     render() {
         const recipe = this.props.recipe;
+        console.log(recipe)
         return (
             <div>
                 <h1>{recipe.label}</h1>

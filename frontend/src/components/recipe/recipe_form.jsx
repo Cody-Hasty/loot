@@ -5,9 +5,8 @@ class RecipeForm extends React.Component {
         super(props);
         this.state = {
             label: '',
-            item: "this.props.itemParent",
+            item: this.props.itemParentID,
             ingredients: '',
-            picture: ''
             
         };
 
@@ -23,7 +22,13 @@ class RecipeForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        this.props.createRecipe(this.state);
+        const formData = new FormData();
+        formData.append("label", this.state.label);
+        formData.append("ingredients", this.state.ingredients);
+        formData.append("item", this.state.item);
+        formData.append("picture", this.state.picture);
+        let recipe = this.props.createRecipe(formData);
+        
         
     }
 
@@ -38,7 +43,7 @@ class RecipeForm extends React.Component {
     }
 
     render() {
-        console.log(this.state)
+        console.log(this.props)
         return (
             <div className="recipe-form-page">
                 <form onSubmit={this.handleSubmit} className="recipe-form">
@@ -59,8 +64,7 @@ class RecipeForm extends React.Component {
                     <input 
                         type="file" 
                         name="Add File" 
-                        value={this.state.pictures} 
-                        onChange={this.update('pictures')} 
+                        onChange={this.handleFile.bind(this)} 
                     />
 
                     <button type="submit"> Submit </button>
