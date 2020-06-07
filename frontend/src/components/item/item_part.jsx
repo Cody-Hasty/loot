@@ -9,6 +9,7 @@ class Item extends React.Component{
 
     render(){
         const item = this.props.item;
+        console.log(item)
         return (
           <div className="item-div">
             <Link to={`/items/${item._id}`}>

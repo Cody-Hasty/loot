@@ -25,10 +25,17 @@ router.post('/', upload.single("picture"), passport.authenticate('jwt', { sessio
     if (!isValid) {
         return res.status(400).json(errors);
     }
+    
+    let image;
+    if (req.file){
+      image = req.file.location;
+    }
 
     const newRecipe = new Recipe({
         label: req.body.label,
-        ingredients: req.body.ingredients
+        ingredients: req.body.ingredients,
+        item: req.body.item,
+        picture: image
 
     });
 
