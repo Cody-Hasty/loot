@@ -46,8 +46,6 @@
     resize: none;
 }
 
-
-
 .item-form button {
     width: 100px;
     align-self: center;
@@ -68,15 +66,11 @@
 
 .item-index ul {
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    flex-direction: column;
 }
 
 .item-div {
-    padding: 15px 15px 50px 15px;
-    align-items: center;
-    width: 250px;
+    padding-bottom: 50px;
     height: 140px;
 }
 
@@ -107,14 +101,4 @@
 .item-show p {
     padding: 15px 15px 50px 15px;
     text-align: left;
-}
-
-.missing-picture {
-    background-image: url("../missing-item-pic.svg");
-    background-repeat: no-repeat;
-    float: left;
-    width: 250px;
-    height: 140px;
-    max-width: 200px;
-    max-height: 140px;
 }
