@@ -1,12 +1,12 @@
 .footer {
-    position: absolute;
-    width: 100px;
-    padding-bottom: 25px;
-    bottom: -75px;
-    left: 50%;
-    margin-left: -50px;  
+    position: relative;
+    bottom: -150px;
 }
 
 .footer p {
     font-weight: bold;
+}
+
+footer {
+    height: 100%;
 }
