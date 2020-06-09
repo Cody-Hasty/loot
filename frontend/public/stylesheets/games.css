@@ -48,6 +48,17 @@
     max-height: 250px;
 }
 
+.game-box h3 {
+    font-size: 25px;
+    color: white;
+    padding-bottom: 15px;
+}
+
+.game-box .item-div h1 {
+    font-size: 18px;
+    color: gold;
+}
+
 .game-form input,
 .game-form textarea {
     display: flex;

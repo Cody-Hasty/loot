@@ -11,10 +11,10 @@ class RecipesIndex extends React.Component {
         const recipes = Object.values(this.props.recipes);
         console.log(this.props.getRecipes())
         return (
-            <div>
+            <div className="recipe-index">
                 <ul>
                  {recipes.map(recipe => (
-                    <li key={recipe._id}>
+                    <li key={recipe._id} className="recipe-box">
                         <Recipe recipe={recipe} />
                     </li>
                  ))}

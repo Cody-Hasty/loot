@@ -68,6 +68,8 @@ class Game extends React.Component {
             <h1> {game.title} </h1>
             <p> Description: { game.description } </p>
             <br></br>
+            <hr />
+            <h3>Items</h3>
             {gameList}
             <br></br>
 
@@ -81,7 +83,7 @@ class Game extends React.Component {
 
           </>
         );
-      case true:
+      default:
         return <ItemFormContainer gameParent={ game.title } gameParentID={ game._id} fromGameShow={ true } />
     };
 

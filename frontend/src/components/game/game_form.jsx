@@ -67,7 +67,6 @@ export default class GameForm extends React.Component {
                     <h1>Create a New Game</h1>
                     <p> Title: </p>
                     <input type="text" placeholder="title" value={this.state.title} onChange={this.update("title")}/>
-                    <p> Description: </p>
                     <textarea type="text" placeholder="description" value={this.state.description} onChange={this.update("description")}/>
                     <p> Picture: </p>
                     <input type="file" name="Add File" onChange={this.handleFile.bind(this)}/>

@@ -55,9 +55,9 @@ class ShowItem extends React.Component {
 
         let recipeList;
         if (recipes) {
-            recipeList = <ul>
+            recipeList = <ul className="recipe-list">
                             {recipes.map((recipe) => 
-                            <li key={recipe._id} className="recipes-box">
+                            <li key={recipe._id}>
                                 <Recipe recipe={recipe} />
                             </li>
                             )} 
@@ -74,18 +74,19 @@ class ShowItem extends React.Component {
                         <h1>{item.name}</h1>
                         <hr/>
                             {item.picture ? <img src={item.picture} /> : <img src={image} /> }
-                        <p>{item.description}</p>
-
-                        {recipeList}
-                        <button onClick={this.handleClick}>delete me</button>
+                            <p className="item-desc">{item.description}</p>
+                            <button onClick={this.handleClick}>Delete Item</button>
+                            <button onClick={ this.handleSubmitForm }> Create new recipe </button>
+                        {/* <hr /> */}
+                        <h3>Recipes</h3>
+                        <div className="item-recipe-list">
+                            {recipeList}
+                        </div>
                     </div>
 
-                    <div className="recipe-submit">
-                        <button className="recipe-form-button" onClick={ this.handleSubmitForm }> Create new recipe </button>
-                    </div>
                     </>
                 );
-            case true:
+            default:
                 return <RecipeFormContainer itemParent={item.name} itemParentID={item._id}/>       
         };
     }
