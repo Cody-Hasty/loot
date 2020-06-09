@@ -16,7 +16,6 @@ class ShowRecipe extends React.Component {
                 <h2> Ingredients: </h2>
                 <ul> 
                     <li>{recipe.ingredients} </li>
-                    <li>hi</li>
                 </ul>
             </div>
         )

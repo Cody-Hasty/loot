@@ -1,3 +1,9 @@
+.about-page {
+    /* justify-content: center; */
+    margin: auto;
+    max-width: 800px;
+}
+
 .about-page h1 {
     font-size: 25px;
     font-weight: bold;

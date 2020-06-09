@@ -10,13 +10,14 @@ class Recipe extends React.Component {
         const recipe = this.props.recipe;
         console.log(recipe)
         return (
-            <div>
-                <h1>{recipe.label}</h1>
-                <Link to={`/recipes/${recipe._id}`}>
+            <div className="recipe-part">
+                <Link to={`/recipes/${recipe._id}`} className="recipe-links">
+                    <p className="recipe-label">{recipe.label}</p>
                     {recipe.picture ? (
-                        <img src={recipe.picture} width="100px" />
+                        <img src={recipe.picture} />
                     ) : (
-                        "This recipe has no picture"
+                        <p className="missing-recipe-img">(This recipe has no picture)</p>
+                        
                     )}
                 </Link>
             </div>

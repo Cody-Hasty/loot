@@ -69,6 +69,42 @@
     flex-direction: column;
 }
 
+
+.item-show h1 {
+    margin: 0 auto;
+    padding: 15px 15px 25px 15px;
+    font-size: 22px;
+    font-weight: bold;
+    color: white;
+}
+
+.item-show button {
+    flex-direction: row;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.item-show img {
+    float: left;
+    max-width: 200px;
+    max-height: 140px;
+    padding: 15px;
+}
+
+.item-desc {
+    padding: 15px;
+    height: 140px;
+    text-align: left;
+}
+
+.item-show h3 {
+    font-size: 22px;
+    font-weight: bold;
+    padding-top: 100px;
+    padding-bottom: 20px;
+    color: white;
+}
+
 .item-div {
     padding-bottom: 50px;
     height: 140px;
@@ -83,22 +119,13 @@
     max-height: 140px;
 }
 
-.item-show h1 {
-    margin: 0 auto;
-    padding: 15px 15px 25px 15px;
-    font-size: large;
-    font-weight: bold;
+.item-recipe-list {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    margin: auto;
 }
 
-.item-show img {
-    float: left;
-    max-width: 200px;
-    max-height: 140px;
-    padding: 15px 15px 50px 15px;
-    
-}
-
-.item-show p {
-    padding: 15px 15px 50px 15px;
-    text-align: left;
+.item-recipe-list recipe-part {
+    display: flex;
 }
