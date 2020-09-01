@@ -1,4 +1,5 @@
 import React from 'react';
+import { use } from 'passport';
 
 class SessionForm extends React.Component {
     constructor(props) {
@@ -11,6 +12,7 @@ class SessionForm extends React.Component {
         }
         this.handleSubmit = this.handleSubmit.bind(this);
         this.resetForm = this.resetForm.bind(this);
+        this.logInDemoUser = this.logInDemoUser.bind(this);
     }
 
     update(field) {
@@ -34,7 +36,7 @@ class SessionForm extends React.Component {
         this.props.action(user)
             .then((res = {}) => { 
                 if (!res.errors) {
-                    return this.props.history.push('/#/')
+                    return this.props.history.push('/#/');
                 } else {
                     this.resetForm();
                 }  
@@ -61,6 +63,21 @@ class SessionForm extends React.Component {
 
     componentWillUnmount() {
         this.props.removeErrors();
+    }
+
+    logInDemoUser(e){
+        e.preventDefault()
+        // this.setState({ email: "demouser@loot.com", password: "password"})
+        let demoUser = { email: "demouser@loot.com", password: "password"};
+        this.props.action(demoUser)
+            .then((res = {}) => {
+                if (!res.errors) {
+                    return this.props.history.push('/#/');
+                } else {
+                    this.resetForm();
+                }
+            })
+
     }
 
     render() {
@@ -114,6 +131,11 @@ class SessionForm extends React.Component {
                     </label>
                     {this.props.formType === 'signup' ? passVerify : null}
                     <button>Let's Go!</button>
+                    {this.props.formType === 'login' ? 
+                    <button onClick={this.logInDemoUser}>Demo User</button>
+                    : null
+                }
+                    
                 </form>
             </div>
         )
