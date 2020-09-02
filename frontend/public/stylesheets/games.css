@@ -41,11 +41,23 @@
     width: 100px;
 }
 
+.game-box{
+    max-width: 100%;
+}
+
 .game-box img {
     padding-top: 10px;
     padding-bottom: 10px;
     max-width: 250px;
     max-height: 250px;
+
+}
+
+.paragraph{
+    padding-left: 30px;
+    padding-right: 30px;
+    line-height: 20pt;
+    color: gold;
 }
 
 .game-box h3 {
