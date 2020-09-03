@@ -66,7 +66,7 @@ class Game extends React.Component {
           <div className="game-box">
             {game.picture ? <img src={game.picture} /> : <img src={image} /> }
             <h1> {game.title} </h1>
-            <p> Description: { game.description } </p>
+            <div className="paragraph"> Description: { game.description } </div>
             <br></br>
             <hr />
             <h3>Items</h3>

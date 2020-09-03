@@ -11,7 +11,7 @@ import { logout } from './actions/session_actions';
 document.addEventListener('DOMContentLoaded', () => {
     const root = document.getElementById('root');
     let store;
-    console.log(window);
+    // console.log(window);
     if (localStorage.jwtToken) {
         setAuthToken(localStorage.jwtToken);
         const decoded = jwt_decode(localStorage.jwtToken);
