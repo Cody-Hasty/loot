@@ -59,7 +59,9 @@ class ItemForm extends React.Component{
         formData.append("description", this.state.description);
         formData.append("game_id", this.state.game_id);
         formData.append("picture", this.state.picture);
-        let item = this.props.createItem(formData);
+        this.props.createItem(formData)
+            .then(() => this.props.history.push(`/items/${this.props.state.entities.items._id}`));
+
     }
 
     handleChange(field){

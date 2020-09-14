@@ -44,7 +44,8 @@ export default class GameForm extends React.Component {
         formData.append("description", this.state.description);
         formData.append("user_id", this.props.state.session.user.username);
         formData.append("picture", this.state.picture);
-        this.props.createGame(formData);
+        this.props.createGame(formData)
+            .then(() => this.props.history.push(`/games/${this.props.state.entities.games._id}`));;
     }
 
     update(value) {

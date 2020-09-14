@@ -20,9 +20,8 @@ class RecipeForm extends React.Component {
         formData.append("ingredients", this.state.ingredients);
         formData.append("item", this.state.item);
         formData.append("picture", this.state.picture);
-        let recipe = this.props.createRecipe(formData);
-        
-        
+        this.props.createRecipe(formData)
+            .then(() => this.props.history.push(`/recipes/${this.props.state.entities.recipes._id}`));
     }
 
     handleFile(e){
