@@ -45,12 +45,19 @@
     max-width: 100%;
 }
 
-.game-box img {
+.game-box > img {
     padding-top: 60px;
     padding-bottom: 10px;
     max-width: 250px;
     max-height: 250px;
 
+}
+
+.list-picture{
+    padding-top: 20px;
+    padding-bottom: 50px;
+    max-width: 200px;
+    max-height: 200px;
 }
 
 .paragraph{

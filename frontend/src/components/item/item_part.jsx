@@ -1,11 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import image from "../../assets/angery.jpeg"
+import image from "../../assets/item.svg";
 class Item extends React.Component{
     constructor(props){
         super(props);
     }
-
 
     render(){
         const item = this.props.item;
@@ -15,9 +14,9 @@ class Item extends React.Component{
             <Link to={`/items/${item._id}`}>
             <h1> {item.name}</h1>
               {item.picture ? (
-                <img src={item.picture}/>
+                <img className="item-image" src={item.picture}/>
                 ) : (
-                  <img src={image} /> 
+                  <img className="item-image" src={image} /> 
               )}
             </Link>
           </div>

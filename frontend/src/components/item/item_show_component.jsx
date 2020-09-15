@@ -2,8 +2,8 @@ import React from "react";
 import {Link} from "react-router-dom";
 import RecipeForm from "../recipe/recipe_form";
 import RecipeFormContainer from "../recipe/recipe_form_container";
-import image from "../../assets/angery.jpeg";
-import Recipe from "../recipe/recipe_part"
+import image from "../../assets/item.svg";
+import Recipe from "../recipe/recipe_part";
 
 
 class ShowItem extends React.Component {
@@ -73,7 +73,7 @@ class ShowItem extends React.Component {
                     <div className="item-show">
                         <h1>{item.name}</h1>
                         <hr/>
-                            {item.picture ? <img src={item.picture} /> : <img src={image} /> }
+                            {item.picture ? <img className="show-item" src={item.picture} /> : <img className="show-item" src={image} /> }
                             <p className="item-desc">{item.description}</p>
                             <button onClick={this.handleClick}>Delete Item</button>
                             <button onClick={ this.handleSubmitForm }> Create new recipe </button>

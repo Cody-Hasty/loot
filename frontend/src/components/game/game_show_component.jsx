@@ -1,8 +1,8 @@
 import React from "react";
 import ItemForm from "../item/item_form";
 import ItemFormContainer from "../item/item_form_container";
-import image from "../../assets/angery.jpeg"
-import Item from "../item/item_part"
+import image from "../../assets/game.svg";
+import Item from "../item/item_part";
 
 
 
@@ -26,8 +26,8 @@ class Game extends React.Component {
     console.log(this.props)
     let result = []
     this.props.getItems().then(() => {
-      const game = this.props.state.entities.games
-      const items = this.props.state.entities.items
+      const game = this.props.state.entities.games;
+      const items = this.props.state.entities.items;
       if (items && game.items) {
         for (let key in items) {
           if (items[key].game_id === game._id) result.push(items[key])
@@ -73,7 +73,8 @@ class Game extends React.Component {
             {gameList}
             <br></br>
 
-          <footer><p>Page started by: { game.user_id } on { game.date } </p></footer>
+          {/* <footer><p>Page started by: { game.user_id } on { game.date } </p></footer>
+          {console.log(game)} */}
           </div>
              
           
