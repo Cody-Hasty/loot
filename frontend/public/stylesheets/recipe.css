@@ -19,6 +19,12 @@
 
 .recipe-links {
     text-decoration: none;
+   
+   
+}
+.recipe-part{
+    height:200px;
+     align-content: center;
 }
 
 .recipe-links h1 {
@@ -96,7 +102,8 @@
     text-decoration: underline;
 }
 
-.recipe-part img {
+
+.recipe-img {
     max-height: 135px;
     max-width: 150px;
     padding-bottom: 15px;

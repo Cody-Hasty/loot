@@ -84,7 +84,7 @@
     margin-bottom: 15px;
 }
 
-.item-show img {
+.show-item {
     float: left;
     max-width: 200px;
     max-height: 140px;
@@ -107,7 +107,7 @@
 
 .item-div {
     padding-bottom: 50px;
-    height: 140px;
+    height: 200px;
 }
 
 .item-div h1 {

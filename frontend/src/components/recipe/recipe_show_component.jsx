@@ -1,4 +1,5 @@
 import React from 'react';
+import image from "../../assets/recipe.png";
 
 class ShowRecipe extends React.Component {
     constructor(props) {
@@ -12,7 +13,11 @@ class ShowRecipe extends React.Component {
         return (
             <div className="recipe-show">
                 <h1>{recipe.label}</h1>
-                <img src={recipe.picture}/>
+                {recipe.picture ? (
+                    <img src={recipe.picture} />
+                ) : (
+                    <img src={image} />
+                    )}
                 <h2> Ingredients: </h2>
                 <ul> 
                     <li>{recipe.ingredients} </li>
