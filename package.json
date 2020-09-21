@@ -40,7 +40,7 @@
         "react-router-dom": "^5.1.2",
         "react-scripts": "^3.4.3",
         "redux": "^4.0.5",
-        "validator": "^13.1.1",
+        "validator": "^13.1.17",
         "yargs-parser": "^19.0.4"
     },
     "devDependencies": {
