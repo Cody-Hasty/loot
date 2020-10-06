@@ -12,7 +12,7 @@ const jwt = require('jsonwebtoken');
 //USER REGISTER ROUTE
 router.post('/register', (req, res) => {
     const { errors, isValid } = validateRegisterInput(req.body);
-    console.log('im in route', req)
+    // console.log('im in route', req)
     if (!isValid) {
         return res.status(400).json(errors);
     }
@@ -59,7 +59,7 @@ router.post('/register', (req, res) => {
 //USER LOGIN ROUTE
 router.post('/login', (req, res) => {
     const { errors, isValid } = validateLoginInput(req.body);
-    console.log(errors);
+    // console.log(errors);
     if (!isValid) {
         return res.status(400).json(errors);
     }

@@ -36,7 +36,7 @@ class NavBar extends React.Component {
     logoutButton() {
         let buttonLogic = () => {
             this.props.logout();
-            console.log('in button logic'); //////////
+            // console.log('in button logic'); //////////
             this.setState(this.state);
             this.refresh();
             // this.props.currentUser.id = null;

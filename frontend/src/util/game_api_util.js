@@ -12,7 +12,7 @@ export const getGame = (gameId) => {
     return axios.get(`/api/games/${gameId}`);
 };
 
-const log = x => (console.log(x), x)
+// const log = x => (console.log(x), x)
 
 export const getGames = () => {
     return axios.get('/api/games');

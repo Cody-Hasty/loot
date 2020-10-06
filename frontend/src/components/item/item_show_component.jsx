@@ -19,8 +19,8 @@ class ShowItem extends React.Component {
     }
 
     fillRecipes() {
-        console.log(this.props)
-        let result = []
+        // console.log(this.props)
+        let result = [];
         this.props.getRecipes().then(() => {
           const recipes = this.props.state.entities.recipes
           const item = this.props.state.entities.items
@@ -48,7 +48,7 @@ class ShowItem extends React.Component {
     
 
     render(){
-        console.log(this.state)
+        // console.log(this.state)
         const item = this.props.state.entities.items
         const {recipeSubmit} = this.state
         const recipes = this.state.recipes

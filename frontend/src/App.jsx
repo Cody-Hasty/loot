@@ -25,6 +25,8 @@ import GameShowContainer from "./components/game/game_show_container"
 import ShowItemContainer from "./components/item/item_show_container";
 import { RECEIVE_CURRENT_USER } from './actions/session_actions';
 
+
+
 const customHistory = createBrowserHistory();
 function App() {
     return (

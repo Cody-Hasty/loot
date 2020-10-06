@@ -22,7 +22,7 @@ export default class GameForm extends React.Component {
     renderErrors(){
         const errors = Object.values(this.props.state.errors.game);
         if (errors) {
-            console.log(errors);
+            // console.log(errors);
             return(
                 <ul >
                    {errors.map((error, i) =>{
@@ -58,7 +58,7 @@ export default class GameForm extends React.Component {
 
 
     render() {
-        console.log(this.props.state.session.user.username)
+        // console.log(this.props.state.session.user.username)
         return (
             <div className="game-form-page">
                 <div>
