@@ -23,7 +23,7 @@ class Game extends React.Component {
   }
 
   fillItems() {
-    console.log(this.props)
+    // console.log(this.props)
     let result = []
     this.props.getItems().then(() => {
       const game = this.props.state.entities.games;
@@ -41,7 +41,7 @@ class Game extends React.Component {
 
 
   render() {
-    console.log(this.state)
+    // console.log(this.state)
     const {itemSubmit} = this.state;
     const game = this.props.state.entities.games 
     const items = this.state.items

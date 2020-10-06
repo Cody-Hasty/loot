@@ -9,7 +9,7 @@ class RecipesIndex extends React.Component {
 
     render() {
         const recipes = Object.values(this.props.recipes);
-        console.log(this.props.getRecipes())
+        // console.log(this.props.getRecipes())
         return (
             <div className="recipe-index">
                 <ul>

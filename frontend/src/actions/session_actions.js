@@ -46,7 +46,7 @@ export const signup = user => dispatch => {
 export const login = user => dispatch => {
     return APIutil.login(user)
         .then(res => {
-            console.log("res:", res); ///////
+            // console.log("res:", res); ///////
             const { token } = res.data;
             localStorage.setItem('jwtToken', token);
             APIutil.setAuthToken(token);
@@ -54,7 +54,7 @@ export const login = user => dispatch => {
             dispatch(receiveCurrentUser(decoded));
         })
         .catch(err => {
-            console.log("error:", err.response);
+            // console.log("error:", err.response);
             return dispatch(receiveErrors(err.response.data))
         })
 };
