@@ -1,24 +1,38 @@
-header {
+header, .session-buttons, .title-link, .navbar a {
     display: contents;
 }
 
 .navbar {
-    /* display: contents; */
+    display: grid;
+    grid-template-columns: 130px auto 130px;
     padding-bottom: 25px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    height: 120px;
+    align-items: center;
 }
 
-.navbar a {
-    display: flex;
-    height: 80px;
+.navbar button {
+    margin-top: 25px;
+    margin-bottom: 25px;
 }
 
-.session-buttons {
-    display: contents;
+.signup-button {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    justify-self: left;
+
+}
+
+.website-title {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    justify-self: center;
+    align-self: center;
+}
+
+.logout-button, .login-button {
+    grid-column-start: 3;
+    grid-column-end: 4;
+    justify-self: right;
+
 }
 
 .signup-button, .login-button, .logout-button {
@@ -28,10 +42,6 @@ header {
     width: 80px;
     height: 80px;
     font-size: 15px;
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    line-height: 60px;
 }
 
 .signup-button:hover,
@@ -46,10 +56,8 @@ header {
     font-weight: bolder;
     font-size: 75px;
     width: 210px;
-    padding-top: 30px;
 }
 
 .title-link {
     text-decoration: none;
-}
-
+} 
