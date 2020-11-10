@@ -43,16 +43,4 @@ input:focus {
 
 .session-form button {
     width: 100px;
-    align-self: center;
-    color: black;
-    font-weight: bold;
-    background-color: gold;
-    height: 30px;
-    font-size: 15px;
-    margin-top: 50px;
-}
-
-.session-form button:hover {
-    background-image: linear-gradient(to top right, gold, white);
-    cursor: pointer;
 }
