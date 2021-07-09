@@ -45,6 +45,6 @@
         "yargs-parser": "^20.2.0"
     },
     "devDependencies": {
-        "nodemon": "^2.0.4"
+        "nodemon": "^2.0.10"
     }
 }
